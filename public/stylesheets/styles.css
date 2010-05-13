@@ -1,236 +1,254 @@
-body, p, ol, ul, td{
-	font-family: Arial;
-	font-size: 12px;
-	margin: 0px;
-	padding: 0px;
-	margin-bottom: 5px;
+/* TYPOGRAPHY */
+* {
+	font-family: Arial, Helvetica, sans-serif;
 }
-
-img {
-	border: 0;
+div {
+	margin: 0;
 }
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+.vertical_nav li, .horizontal_nav li {
+	font-size: .8em;
+	text-transform: capitalize;
 }
-
-a { color: #000; text-decoration: none; font-weight: bold; }
-
-input {
-	background-color: #EEE;
-	border: none;
-}
-ul#site_nav a {
+#site_nav li {
 	text-transform: uppercase;
-	font-size: 13px;
-	text-decoration: none;
-	font-weight: bold;
-	color: #333;
 }
-
-.clear {
-	clear: both;
-	margin: 0px;
+h1, h2, h3, h4, h5, p {
+	font-weight: normal;
 	padding: 0px;
+	margin: 0px;
 }
-
-#content > table {
-	width: 100%;
+#site_title h2 {
+	font-weight: normal;
+	font-size: 1.1em;
 }
-
-
-/* BASIC LAYOUT */
-
-ul#site_nav a {
-	text-transform: uppercase;
-	font-size: 13px;
-	text-decoration: none;
+#login_form p{
+	font-size: 0.9em;
+}
+#page_title h1 {
 	font-weight: bold;
-	color: #333;
 }
-
-/* BASIC PAGE LAYOUT */
-#top_bar {
-	width: 100%;
-	height: 30px;
-	display: block;
-	padding: 5px;
-	padding-top: 1px;
-	background: #999999;
+#page_description p {
+	margin-top: 0.5em;
+	font-size: 0.8em;
 }
-
-#logo {
-	border: 0;
-	display: block;
+#page_stat h3#stat {
+	margin: 0;
+	padding: 0;
+	font-size: 2.5em;
+	text-align: left;
+}
+#page_stat p {
+	font-size: .8em;
+	font-weight: bold;
+	text-align: left;
+}
+.flash p{
+	font-size: 1.1em;
+	font-weight: bold;
+}
+/* LAYOUT */
+body {
+	padding: 0;
+	margin: 0;
+}
+#banner, #page_header, #content {
+	padding-top: 0;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+}
+#page_header {
+	padding-top: 0.7em;
+}
+#banner #logo {
 	float: left;
 }
-#site_title {
-	margin: 0px;
-	padding: 5px;
-	padding-left: 85px;
-	font-weight: normal;
-	color: #ddd;
-}
-#skip_nav {
-	display: none;
-}
-
-ul#site_nav{
-	display: inline;
-	float: right;
-	padding: 10px;
-	margin: 0px;
-	margin-right: 10px;	
-}
-
-#site_nav li{
-	display: inline;
-	padding-right: 15px;
-	padding-top: 50px;
-}
-
-#top_login {
-	width: 400px;
+#banner, #site_title, #site_nav, #login_form {
 	height: 35px;
+}
+#site_title {
+	float: left;
+	width: 400px;
+	padding-top: 2px;
+}
+#site_title h2{
+	margin-top: 5px;
+	margin-left: 90px;
+}
+#login_form {
 	float: right;
+	width: 350px;
+	text-align: right;
+}
+#login_form form, #login_form p {
+	padding-top: 8px;
+}
+
+#site_nav {
+	display: block;
+	padding-top: 10px;
+	margin-bottom: 0px;
+	margin-left: 500px;
+	margin-right: 360px;
+}
+#site_nav ul {
+	margin-top: 10px;
+}
+#page_description {
+	margin-right: 400px;
+}
+#page_stat {
+	width: 150px;
+}
+#page_stat, #page_nav {
+	float: right;
+}
+#page_nav, #page_nav ul li {
+	width: 200px;
 	text-align: right;
 }
 
-#top_login input {
-	font-size: 13px;
-	font-family: Arial, sans-serif;
-	margin-right: 5px;
+/* COLOR */
+body {
+	background: #FFF;
+}
+#banner {
+	background-color: #999;
+}
+#site_title h2{
+	color: #EEE;
+}
+#site_nav a {
+	color: #FFF;
+}
+#page_nav a {
+	color: #333;
+}
+#page_stat, #page_stat h3 {
+	color: #AAA;
 }
 
-#top_login input.button, #top_login a {
-	background: none;
+#error { background-color: #E00; color: #600; }
+#warning { background-color: #FF6; color: #660; }
+#notice { background-color: #AFF0fe; color: #1fbfe1; }
+
+/* BASIC ELEMENTS */
+a {
+	text-decoration: none;
 	font-weight: bold;
-	text-transform:uppercase;
+	color: #000;
 }
-
-#top_login p, #top_login form {
-	margin-right: 10px;
-	padding: 7px;
+.clear {
+	clear: both;
 }
-
-#top_login span.greeting {
-	font-size: 1.2em;
-	color: #fff;
-	font-weight: bold;
-	padding-right: 15px;
+.horizontal_nav, .horizontal_nav li{
+	display: inline;
+	padding: 0;
+	margin: 0;
+	margin-right: 2em;
+	list-style-type:none;
 }
-
-#content, #page_bar {
-	padding: 0px;
-	margin-top: 0px;
-	margin-bottom: 15px;
-	margin-left: 10px;
-	margin-right: 10px;
+.vertical_nav {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	
 }
-
-#page_bar {
-	padding: 0px;
+.vertical_nav li {
+	display: block;
+	text-align: center;
+	padding: 2px;
+	margin-bottom: 2px;
 }
-
-#page_stat, #page_nav {
-	width: 200px;
-	float: right;
-	height: 60px;
+.flash {
+	padding: 0.5em; 
+	margin: 1em;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;		
 }
-
-#page_title {
-	margin-right: 500px;
+.left {
+	text-align: left;
 }
-
-#page_title h1 {
-	margin: 0px;
-	margin-bottom: 0.2em;
-	padding: 0px;
+/* TABLES AND FORMS */
+#content form, #content form p {
+	text-align: left;
+	margin-bottom: .5em;
 }
-
-/*FROM SCAFFOLD */
-
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+#main_table th, #content label {
+	text-align: left;
+	font-weight: normal;
+	font-size: .8em;
+	color: #555;
+	text-transform: uppercase;
 }
-
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+#content input {
+	margin-bottom: .2em;
+	margin-top: .1em;
+	font-size: 1.1em;
 }
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-/* TABLE STYLES */
-table#main_data {
+#main_table {
 	width: 100%;
-	font-size: 13px;
-	padding: 0px;
-	margin-top: 0.5em;
+	margin-top: 1em;
+	font-size: 0.8em;
 }
-tr.even {
+#main_table tr.even {
 	background-color: #eeeeff;
 }
-#main_data td {
-	padding: 5px;
-}
-
-#main_data th {
+#main_table td, #main_table th {
+	padding: 1em;
+}		
+#main_table th, label {
 	margin: 0px;
 	padding: 0px;
-	padding-left: 5px;
 	font-weight: normal;
 	color: #666;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 0.8em;
 	text-align: left;
 	vertical-align: bottom;
 }
-
-#main_data caption {
+#main_table th {
+	padding-left: 0.1em;
+}
+#main_table caption {
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 1.5em;
 	text-align: left;
 	margin-bottom: 5px;
 	margin-top: 10px;
 }
-
-#main_data .button a {
+#main_table .button a {
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: 11px;
+	font-size: 0.7em;
 	font-weight: bold;
 }
 
-#main_data .total {
-	font-weight: bold;
+/* CENTERED PAGE */
+.centered #page_stat, .centered #page_nav {
+	display: none;
+}
+.centered {
+	background-color: #DDD;
+	padding: 3em;
+	padding-top: 1.5em;
+	margin-top: 3em;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.centered #page_description {
+	margin: 0;
+	padding: 0;
+}
+.centered #page_header {
+	margin: 0;
+	padding: 0;
 	text-align: right;
 }
-
+.centered #page_title {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #999;
+	font-size: 2.5em;
+}

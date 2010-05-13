@@ -3,11 +3,13 @@ class UsersController < ApplicationController
   # render new.rhtml
   def new
     @user = User.new
+    @page_title = "Create new user account"
   end
  
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
+    @page_title = "Create new user account"
     success = @user && @user.save
     if success && @user.errors.empty?
       # Protects against session fixation attacks, causes request forgery
@@ -16,9 +18,9 @@ class UsersController < ApplicationController
       # reset session
       self.current_user = @user # !! now logged in
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      flash[:notice] = "User created."
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+      flash[:error]  = "New account could not be created."
       render :action => 'new'
     end
   end

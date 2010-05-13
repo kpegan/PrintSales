@@ -2,6 +2,8 @@
 class SessionsController < ApplicationController
   # render new.rhtml
   def new
+    @page_title = "Please log in"
+    @centered = "centered"
   end
 
   def create

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title><%=h site_title%> - <%=h @page_title%></title>
+		<%= stylesheet_link_tag 'styles' %>
+</head>
+<body>
+
+<div id="top_bar">
+<a href="#main_content" id="skip_nav">Skip to content.</a>
+
+<img id="logo" alt="logo" width="75px" height="30px" src="/images/MICA_logo_White.png"/>
+
+<div id = "top_login">
+	<% if logged_in? %>
+		<p><span class="greeting">Hello, <%=h current_user.login %>.</span> <%= link_to "Log out", logout_path %></p>
+	<% else %>
+<% form_tag session_path do -%>
+	<%= text_field_tag 'login', @login, :size => 14, :value => "User name" %>
+	<%= password_field_tag 'password', nil, :size => 14  %></p>
+	<%= submit_tag 'Log in', :class => "button" %></p>
+<% end -%>
+	<% end %>
+</div>
+
+<ul id = "site_nav">
+	<li><%#= link_to "Users", users_url %></li>
+	<li><%#= link_to "Jobs", jobs_url %></li>
+	<li><%#= link_to "Departments", departments_url %></li>
+	<li><%#= link_to "Roles", roles_url %></li>
+</ul>
+
+<h2 id="site_title"><%=h site_title%></h2>
+
+</div><!--end topbar-->
+<br class="clear" />
+
+<a name="main_content" id="main content" tabindex=-1></a>
+
+<div id="page_bar">
+	<ul id="page_nav">
+		<%= yield :page_nav %>
+	</ul>
+	
+	<div id="page_stat">
+		<%= yield :page_stat %>
+	</div>
+
+	<div id="page_title">
+	<h1><%=h @page_title%></h1>
+	</div>
+		<%= yield :page_info %>
+	</div>
+</div><!--page bar ends-->
+
+<br class="clear"/>
+
+<div id="content">
+<p style="color: green"><%=h flash[:notice] %></p>
+	
+<%= yield %>
+
+
+</div><!--end content-->
+		
+</body>
+</html>
