@@ -1,10 +1,7 @@
-<%# USER NEW VIEW %>
-<% content_for :page_class, "centered" %>
+<%# USER EDIT VIEW %>
+<%= render :partial => 'form' %>
 
 <% content_for(:page_nav) do %>
 	<li><%= link_to 'Show', @user %></li>
 	<li><%= link_to 'View all users', users_path %></li>
 <% end %>
-
-<%= render :partial => 'form' %>
-

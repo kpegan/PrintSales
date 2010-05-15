@@ -1,0 +1,28 @@
+<%# ROLES INDEX VIEW %>
+
+<% content_for(:page_nav) do %>
+	<li><%= link_to 'New role', new_role_path %></li>
+<% end %>
+
+<table id="main_table" cellspacing="0">
+  <tr>
+	<th width="20px"></th>
+	<th width="20px"></th>
+	<th width="20px"></th>
+	<th>Name</th>
+	<th>Users</th>
+  </tr>
+
+<% @roles.each do |role| %>
+  <tr class="<%= cycle("even", "odd") %>">
+  	<td class="button"><%= link_to image_tag("show.png", :border=>0), role %></td>
+	<td class="button"><%= link_to image_tag("edit.png", :border=>0), edit_role_path(role) %></td>
+	<td class="button"><%= link_to image_tag("delete.png", :border=>0), role, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h role.name %></td>
+	<td><%=h role.users.count %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

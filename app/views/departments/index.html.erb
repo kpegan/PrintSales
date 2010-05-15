@@ -1,0 +1,27 @@
+<%# DEPARTMENT INDEX VIEW%>
+
+<% content_for(:page_nav) do%>
+	<li><%= link_to 'New department', new_department_path %></li>
+<% end %>
+
+<table id="main_table" cellspacing="0">
+  <tr>
+  	<th width="20px"></th>
+	<th width="20px"></th>
+	<th width="20px"></th>
+    <th>Name</th>
+	<th>Users</th>
+  </tr>
+
+<% @departments.each do |department| %>
+   <tr class="<%= cycle("even", "odd") %>">
+  	<td class="button"><%= link_to image_tag("show.png", :border=>0), department %></td>
+	<td class="button"><%= link_to image_tag("edit.png", :border=>0), edit_department_path(department) %></td>
+	<td class="button"><%= link_to image_tag("delete.png", :border=>0), department, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h department.name %></td>
+	<td><%=h department.users.count %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

@@ -1,0 +1,75 @@
+<% @user.password = @user.password_confirmation = nil %>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+  <p>
+  	<%= f.label :mica_id, "MICA ID" %><br/>
+	<%= f.text_field :mica_id, :size => "8" %>
+  </p>
+  <fieldset>
+  	<legend>Contact information</legend>
+	<p>
+		<%= f.label :first_name %><br/>
+		<%= f.text_field :first_name, :size => 20 %>
+	</p>
+	<p>
+		<%= f.label :last_name %><br/>
+		<%= f.text_field :last_name, :size => 20 %>
+	</p>
+	<p>
+		<%= f.label :email %><br/>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :phone %><br/>
+		<%= f.text_field :phone, :size => 11 %>
+	</p>
+  </fieldset>
+  
+  <fieldset>
+  	<legend>MICA affiliation</legend>
+  <p>
+    <%= f.label :position %><br />
+	<%= f.radio_button :position, 'Student' %> Student<br />
+	<%= f.radio_button :position, 'Faculty' %> Faculty<br />
+	<%= f.radio_button :position, 'Staff' %> Staff<br />
+  </p><p></p>
+  <p>
+    <%= f.label :department_id %><br />
+	<%= f.select :department_id, Department.find(:all, :order => 'name').collect {|d| 
+		[d.name, d.id]} %>
+  </p>
+  <br class="clear"/>
+  <p>
+    <%= f.label :graduation, "Graduation date" %><br />
+    <%= f.date_select :graduation %>
+  </p>
+  </fieldset>
+  <fieldset>
+  	<legend>Account information</legend>
+
+  <p>
+  	<%= f.label :login %><br/>
+	<%= f.text_field :login, :size => 20  %>
+  </p>
+  
+  <p>
+    <%= f.label :role_id %><br />
+	<%= f.select :role_id, Role.find(:all).collect {|r|
+		[r.name, r.id]} %>
+  </p>
+  <br class="clear"/>
+  <p>
+ 	<%= f.label :password %><br/>
+	<%= f.password_field :password, :size => 15 %>
+  </p>
+  <br class="clear"/>
+  <p>
+  	<%= f.label :password_confirmation, 'Confirm Password' %><br/>
+	<%= f.password_field :password_confirmation, :size => 15 %>
+  </p>
+
+  </fieldset>
+  <%= f.submit 'Submit' %>
+
+<% end %>

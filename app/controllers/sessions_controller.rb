@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   # render new.rhtml
   def new
     @page_title = "Please log in"
-    @centered = "centered"
   end
 
   def create
@@ -14,6 +13,7 @@ class SessionsController < ApplicationController
       # protection if user resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset_session
+      
       self.current_user = user
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag

@@ -1,6 +1,10 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  belongs_to :department
+  belongs_to :role
+  has_many :jobs
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
@@ -15,14 +19,26 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
+  #Stuff I added
+  validates_presence_of :mica_id
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :email
+  validates_presence_of :phone
+  validates_presence_of :position
+  validates_presence_of :graduation, :if => :student?
   
+  validates_format_of :phone,
+    :with => /\d{10,10}/i,
+    :message => "Please provide a phone number with area code."
+  validates_uniqueness_of :mica_id
+ 
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
-
-
+  attr_accessible :mica_id, :login, :email, :first_name, :last_name, 
+    :phone, :department_id,:position,:role_id, :password, :password_confirmation
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
@@ -43,7 +59,32 @@ class User < ActiveRecord::Base
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
   end
-
+  
+  #PrintSales specific methods
+  def full_name 
+    if first_name.nil? or last_name.nil?
+      " "
+    else
+      first_name + " " + last_name
+    end
+  end
+  
+  def student?
+    position == "student"
+  end
+  
+  def phone_formatted
+    "(" + phone[0..2] + ") " + phone[3..5] + "-" + phone[6..9]
+  end
+  
+  def grad_date 
+    if graduation.nil?
+      "N/A"
+    else
+      user.graduation.strftime "%B %Y"
+    end
+  end
+  
   protected
     
 

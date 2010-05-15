@@ -8,5 +8,10 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
+  
+  protected
+    def authorized?
+      logged_in? && (request.get? || current_user.role.name == "Admin")
+    end
 end

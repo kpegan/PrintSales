@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100514011540) do
+ActiveRecord::Schema.define(:version => 20100514201743) do
+
+  create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
@@ -22,10 +34,13 @@ ActiveRecord::Schema.define(:version => 20100514011540) do
     t.datetime "remember_token_expires_at"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "phone_id"
+    t.string   "mica_id"
+    t.date     "graduation"
+    t.string   "phone"
+    t.string   "grad_date"
     t.string   "role_id"
     t.string   "department_id"
-    t.string   "position_id"
+    t.string   "position"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
