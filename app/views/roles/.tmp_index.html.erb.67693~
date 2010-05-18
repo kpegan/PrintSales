@@ -10,7 +10,6 @@
 	<th width="20px"></th>
 	<th width="20px"></th>
 	<th>Name</th>
-	<th>Description</th>
 	<th>Users</th>
   </tr>
 
@@ -20,7 +19,6 @@
 	<td class="button"><%= link_to image_tag("edit.png", :border=>0), edit_role_path(role) %></td>
 	<td class="button"><%= link_to image_tag("delete.png", :border=>0), role, :confirm => 'Are you sure?', :method => :delete %></td>
     <td><%=h role.name %></td>
-	<td><%=h role.description %></td>
 	<td><%=h role.users.count %></td>
   </tr>
 <% end %>

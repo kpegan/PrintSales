@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :jobs
   
+  delegate :permissions, :to => :role
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
@@ -84,6 +86,7 @@ class User < ActiveRecord::Base
       graduation
     end
   end
+  
   
   #Added for admin characteristics
   

@@ -47,7 +47,12 @@ class UsersController < ApplicationController
  
   def create
     logout_keeping_session!
-    @user = User.new(params[:user])
+    @user = User.new(params[:user]) 
+    
+    @user.role_id = 5 unless logged_in? and current_user.is_an_admin?
+    @user.graduation = nil
+    @user.first_name = "Tutti Fruiti"
+    
     @page_title = "Create new user account"
     success = @user && @user.save
     if success && @user.errors.empty?
@@ -70,6 +75,8 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
+    
+    @user.graduation = nil
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
