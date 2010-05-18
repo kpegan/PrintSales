@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   
   protected
     def authorized?
-      logged_in? && (request.get? || current_user.role.name == "Admin")
+      logged_in?
     end
+    
 end

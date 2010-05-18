@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :mica_id, :login, :email, :first_name, :last_name, 
-    :phone, :department_id,:position,:role_id, :password, :password_confirmation
+    :phone, :department_id,:position,:role_id, :password, :password_confirmation, :graduation
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
@@ -78,14 +78,35 @@ class User < ActiveRecord::Base
   end
   
   def grad_date 
-    if graduation.nil?
+    if graduation.nil? 
       "N/A"
     else
-      user.graduation.strftime "%B %Y"
+      graduation
     end
   end
   
-  protected
+  #Added for admin characteristics
+  
+  def method_missing(method_id, *args)
+    if match = matches_dynamic_role_check?(method_id)
+      tokenize_roles(match.captures.first).each do |check|
+        return true if role.name.downcase == check
+      end
+      return false
+    else
+      super
+    end
+  end
+ 
+  private
+ 
+  def matches_dynamic_role_check?(method_id)
+    /^is_an?_([a-zA-Z]\w*)\?$/.match(method_id.to_s)
+  end
+ 
+  def tokenize_roles(string_to_split)
+    string_to_split.split(/_or_/)
+  end
     
 
 
