@@ -35,6 +35,18 @@ class User < ActiveRecord::Base
     :message => "Please provide a phone number with area code."
   validates_uniqueness_of :mica_id
  
+  def validate
+    role_and_dept_must_exist
+  end
+  
+  def role_and_dept_must_exist
+    if Role.find_by_id(role_id).nil?
+      self.errors.add(:description, "Must include a valid role.")
+    end
+    if Department.find_by_id(department_id).nil?
+      self.errors.add(:description, "Must include a valid department.")
+    end
+  end
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation

@@ -76,7 +76,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     
-    @user.graduation = nil
+    params[:user].role_id = 5 unless logged_in? and current_user.is_an_admin?
+    params[:user].graduation = nil unless params[:user].position = "Student"
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
