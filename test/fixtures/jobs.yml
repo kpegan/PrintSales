@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: MyString
+  staff_id: MyString
+  file: MyString
+  paper_width: 1.5
+  paper_height: 1.5
+  image_width: 1.5
+  image_height: 1.5
+  paper_price: 9.99
+  ink_price: 9.99
+  quantity: 1
+  discount: 1
+  printed: 2010-05-18 23:55:22
+  paid: 2010-05-18 23:55:22
+
+two:
+  user_id: MyString
+  staff_id: MyString
+  file: MyString
+  paper_width: 1.5
+  paper_height: 1.5
+  image_width: 1.5
+  image_height: 1.5
+  paper_price: 9.99
+  ink_price: 9.99
+  quantity: 1
+  discount: 1
+  printed: 2010-05-18 23:55:22
+  paid: 2010-05-18 23:55:22

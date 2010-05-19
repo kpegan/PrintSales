@@ -31,7 +31,7 @@
     <td><%=h user.position %></td>
     <td><%= link_to user.department.name,user.department %></td>
     <td><%=h user.grad_date %></td>
-    <td><%=h user.role.name unless Role.find_by_id(user.role_id).nil? %></td>
+    <td><%=h user.role.name %></td>
   </tr>
 <% end %>
 </table>

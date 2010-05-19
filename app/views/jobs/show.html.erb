@@ -1,0 +1,68 @@
+<p>
+  <b>User:</b>
+  <%=h @job.user_id %>
+</p>
+
+<p>
+  <b>Staff:</b>
+  <%=h @job.staff_id %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%=h @job.file %>
+</p>
+
+<p>
+  <b>Paper width:</b>
+  <%=h @job.paper_width %>
+</p>
+
+<p>
+  <b>Paper height:</b>
+  <%=h @job.paper_height %>
+</p>
+
+<p>
+  <b>Image width:</b>
+  <%=h @job.image_width %>
+</p>
+
+<p>
+  <b>Image height:</b>
+  <%=h @job.image_height %>
+</p>
+
+<p>
+  <b>Paper price:</b>
+  <%=h @job.paper_price %>
+</p>
+
+<p>
+  <b>Ink price:</b>
+  <%=h @job.ink_price %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @job.quantity %>
+</p>
+
+<p>
+  <b>Discount:</b>
+  <%=h @job.discount %>
+</p>
+
+<p>
+  <b>Printed:</b>
+  <%=h @job.printed %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%=h @job.paid %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

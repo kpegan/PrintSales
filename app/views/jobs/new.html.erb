@@ -1,0 +1,63 @@
+<h1>New job</h1>
+
+<% form_for(@job) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :staff_id %><br />
+    <%= f.text_field :staff_id %>
+  </p>
+  <p>
+    <%= f.label :file %><br />
+    <%= f.text_field :file %>
+  </p>
+  <p>
+    <%= f.label :paper_width %><br />
+    <%= f.text_field :paper_width %>
+  </p>
+  <p>
+    <%= f.label :paper_height %><br />
+    <%= f.text_field :paper_height %>
+  </p>
+  <p>
+    <%= f.label :image_width %><br />
+    <%= f.text_field :image_width %>
+  </p>
+  <p>
+    <%= f.label :image_height %><br />
+    <%= f.text_field :image_height %>
+  </p>
+  <p>
+    <%= f.label :paper_price %><br />
+    <%= f.text_field :paper_price %>
+  </p>
+  <p>
+    <%= f.label :ink_price %><br />
+    <%= f.text_field :ink_price %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :discount %><br />
+    <%= f.text_field :discount %>
+  </p>
+  <p>
+    <%= f.label :printed %><br />
+    <%= f.datetime_select :printed %>
+  </p>
+  <p>
+    <%= f.label :paid %><br />
+    <%= f.datetime_select :paid %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', jobs_path %>
