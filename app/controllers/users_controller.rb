@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
-
   before_filter :login_required
 
   def index
     #have to be logged in to see user list
-    
     @users = User.all
     @page_title = "Users"
 
@@ -18,11 +16,13 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show    
     @user = User.find(params[:id])
-    #@unpaid_jobs = @user.jobs.find(:all, :conditions => "paid IS NULL")
-    #@total_bill = 0;
-    #for job in @unpaid_jobs
-    #  @total_bill += job.discounted_total
-    #end
+    @table_caption = "Unpaid print jobs"
+    #Find all unpaid print jobs by this user
+    @jobs = @user.jobs.find(:all, :conditions => "paid IS NULL")
+    @total_bill = 0;
+    for job in @jobs
+      @total_bill += job.discounted_total
+    end
     
     @page_title = @user.full_name #+ " [" + @user.role.name + "]"
 

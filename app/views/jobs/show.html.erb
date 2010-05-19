@@ -1,68 +1,73 @@
-<p>
-  <b>User:</b>
-  <%=h @job.user_id %>
-</p>
+<%# JOBS SHOW VIEW %>
+<% content_for :page_class, "centered" %>
 
-<p>
-  <b>Staff:</b>
-  <%=h @job.staff_id %>
-</p>
+<% content_for(:page_nav) do %>
+	<li><%= link_to 'Edit', edit_job_path(@job) %></li>
+	<% if @job.printed.nil? %>
+		<li><%= link_to 'Print', :action =>"print", :id=>@job %></li>
+	<% else %>
+		<% if @job.paid.nil? %>
+			<li><%= link_to 'Void printed', :action =>"void_printed", :id=>@job %></li>
+		<% end %>
+	<% end %>
+	<% if @job.paid.nil? and not @job.printed.nil? %>
+		<li><%= link_to 'Pay', :action =>"pay", :id=>@job %></li>
+	<% else %>
+		<% unless @job.printed.nil? %>
+			<li><%= link_to 'Void payment', :action =>"void_payment", :id=>@job %></li>
+		<% end %>
+	<% end %>
+	<li><%= link_to "Back to user", @job.user %>
+<% end %>
 
-<p>
-  <b>File:</b>
-  <%=h @job.file %>
-</p>
+<% content_for(:page_info) do %>
+	<p>Staff: <%=h @job.staff.first_name %></p>
+	<p><%=h @job.status_date %></p>
+<% end %>
 
-<p>
-  <b>Paper width:</b>
-  <%=h @job.paper_width %>
-</p>
-
-<p>
-  <b>Paper height:</b>
-  <%=h @job.paper_height %>
-</p>
-
-<p>
-  <b>Image width:</b>
-  <%=h @job.image_width %>
-</p>
-
-<p>
-  <b>Image height:</b>
-  <%=h @job.image_height %>
-</p>
-
-<p>
-  <b>Paper price:</b>
-  <%=h @job.paper_price %>
-</p>
-
-<p>
-  <b>Ink price:</b>
-  <%=h @job.ink_price %>
-</p>
-
-<p>
-  <b>Quantity:</b>
-  <%=h @job.quantity %>
-</p>
-
-<p>
-  <b>Discount:</b>
-  <%=h @job.discount %>
-</p>
-
-<p>
-  <b>Printed:</b>
-  <%=h @job.printed %>
-</p>
-
-<p>
-  <b>Paid:</b>
-  <%=h @job.paid %>
-</p>
-
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<table id="invoice_table" cellspacing="0">
+	<tr class="item">
+		<th>Paper</th>
+		<td><%=h @job.paper_width %>" x <%=h @job.paper_height %>"</td>
+		<td><%=h "%5.2f" % @job.paper_area %> sq. ft. @ <%=h number_to_currency @job.paper_price %></td>
+		<td><%=h number_to_currency @job.paper_price  * @job.paper_area %></td>
+	</tr>	
+	<tr class="item">
+		<th>Image</th>
+		<td><%=h @job.image_width %>" x <%=h @job.image_height %>"</td>
+		<td><%=h "%5.2f" % @job.image_area %> sq. ft. @ <%=h number_to_currency @job.ink_price%></td>
+		<td><%=h number_to_currency @job.ink_price  * @job.image_area %></td>
+	</tr>
+	<tr class="total">	
+		<td></td>
+		<td></td>
+		<th>Print</th>
+		<td><%=h number_to_currency @job.print_cost %></td>
+	</tr>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th></th>
+		<td>x <%=h @job.quantity %></td>
+	</tr>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th>Total</th>
+		<td><strong><%=h number_to_currency @job.total %></strong></td>
+	</tr>
+	<% unless @job.discount.nil? or @job.discount = 0 %>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th>Discount</th>
+		<td><%=h number_to_percentage @job.discount %></td>
+	</tr>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th>Final</th>
+		<td><strong><%=h number_to_currency @job.discounted_total %></strong></td>
+	</tr>
+	<% end %>
+</table>

@@ -1,168 +1,77 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title><%=h site_title%> - <%=h @page_title%></title>
-		<%= stylesheet_link_tag 'styles' %>
-	</head>
-	<body>
-		<div id="wrapper">
-		<div id="banner">
-			<div id="site_title">
-				<img id="logo" src="/images/MICA_Logo_White.png"/>
-				<h2><%=h site_title%></h2>
-			</div>			
-			<div id="login_form">
-<% if logged_in? %>
-				<p><span class="greeting">Hello, <%=h current_user.first_name %>.</span> <%= link_to "Log out", logout_path %></p>
-<% else %>
-				<% form_tag session_path do -%>
-					<%= text_field_tag 'login', @login, :size => 14, :value => "User name" %>
-					<%= password_field_tag 'password', nil, :size => 14  %></p>
-					<%= submit_tag 'Log in', :class => "button" %></p>
-				<% end -%>
-<% end %>
-			</div><!-- end login_form-->
-			
-			<div id="site_nav">
-				<ul class="horizontal_nav">
-				<li><%= link_to "Users", :users %></li>
-				<li><a href="Link 2">Print jobs</a></li>
-				<li><a href="Link 3">Statistics</a></li>
-				<li><a href="Link 4">Settings</a></li>
-				</ul>
-			</div>
-		<br class="clear"/>
-		</div><!--end banner-->
-<div id="page" class="<%= yield :page_class %>">	
-		<div id="page_header">
-			<div id="page_nav">
-				<ul class="vertical_nav">
-				<%= yield :page_nav %>
-				<!--
-				<li><a href="Link 1">Create new user</a></li>
-				<li><a href="Link 2">Show all users</a></li>
-				<li><a href="Link 3">Edit current user</a></li>
-				<li><a href="Link 4">Create new print job</a></li>-->
-				</ul>
-			</div>
-			<div id="page_stat">
-				<%= yield :page_stat %>
-				<!--<h3 id="stat">23</h3>
-				<p>Statistics or other info about this page.</p>-->
-			</div>
-			<div id="page_description">
-				<h1 id="page_title"><%=h @page_title%></h1>
-				<!--<p>
-					Additional information about the page.
-				</p>-->
-				<%= yield :page_info %>
-			</div>
-		<br class="clear"/>
-		</div><!--end page_header-->
-		<div id="content">
+    <head>
+        <meta name="generator" content="HTML Tidy, see www.w3.org">
+        <meta http-equiv="Content-Type" content=
+        "text/html; charset=iso-8859-1">
 
-<% flash.each do |type,content| %>
-		<div class="flash" id="<%=h type %>">
-			<%= content_tag(:p, content) %>
-		</div>
-<% end %>
+        <title><%=h site_title%> - <%=h @page_title%></title>
+        <%= stylesheet_link_tag 'styles' %>
+    </head>
 
+    <body>
+        <div id="wrapper">
+            <div id="banner">
+                <div id="site_title">
+                    <img alt="" id="logo" src="/images/MICA_Logo_White.png"> 
+                    <h2><%=h site_title%></h2>
+                </div>
 
-<%= yield %>
-			
-<!--<table id="main_table" cellspacing="0">
-  <tr>
+                <div id="login_form">
+                    <% if logged_in? %>
+                    	<p><span class="greeting">Hello, <%=h current_user.first_name %>.</span> 
+						<%= link_to "Log out", logout_path %></p>
+                    <% else %>
+						<% form_tag session_path do %>
+							<%= text_field_tag 'login', @login, :size => 14, :value => "User name" %><%= password_field_tag 'password', nil, :size => 14  %><br/>
+                    		<%= submit_tag 'Log in', :class => "button" %>
+                    	<% end %> 
+			    	<% end %>
+                </div><!-- end login_form-->
 
-	<th width="20px"></th>
-	<th width="20px"></th>
-	<th width="20px"></th>
-    <th>Name</th>
-	<th>Unpaid print jobs</th>
-    <th>Email</th>
-    <th>Phone</th>
+                <div id="site_nav">
+                    <ul class="horizontal_nav">
+                        <li><%= link_to "Users", :users %></li>
+                        <li><%= link_to "Print jobs", :jobs %></li>
+                        <li>Statistics</li>
+                        <li>Settings</li>
+                    </ul>
+                </div>
+                <br class="clear">
+            </div><!--end banner-->
 
-    <th>Position</th>
-    <th>Dept.</th>
-    <th>Graduation</th>
-    <th>Role</th>
-  </tr>
+            <div id="page" class="<%= yield :page_class %>">
+                <div id="page_header">
+                    <div id="page_nav">
+                        <ul class="vertical_nav">
+                            <%= yield :page_nav %>
+                        </ul>
+                    </div>
 
+                    <div id="page_stat">
+                        <%= yield :page_stat %>
+                    </div>
 
-  <tr class="even">
+                    <div id="page_description">
+                        <h1 id="page_title"><%=h @page_title%></h1>
+                        <%= yield :page_info %>
+                    </div>
+                    <br class="clear">
+                </div><!--end page_header-->
 
-  	<td class="button"><a href="/users/1"><img alt="Show" border="0" src="/images/show.png?1273610176" /></a></td>
-	<td class="button"><a href="/users/1/edit"><img alt="Edit" border="0" src="/images/edit.png?1273610204" /></a></td>
-	<td class="button"><a href="/users/1" onclick="if (confirm('Are you sure?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'Q8bP5V5D4d7WX+1nmFQVhrOhBp/j9SMS50q9q1LdlIQ='); f.appendChild(s);f.submit(); };return false;"><img alt="Delete" border="0" src="/images/delete.png?1273610374" /></a></td>
-	<td><a href="/users/1">Kelly Egan</a></td>
-	<td>1
-    <td>kegan@mica.edu</td>
-    <td>(410) 230-2685</td>
-    <td>Staff</td>
+                <div id="content">
+                    <% flash.each do |type,content| %>
 
-    <td>Graduate Research Lab</td>
-    <td>May 2010</td>
-    <td>Admin</td>
-  </tr>
-
-  <tr class="odd">
-  	<td class="button"><a href="/users/2"><img alt="Show" border="0" src="/images/show.png?1273610176" /></a></td>
-	<td class="button"><a href="/users/2/edit"><img alt="Edit" border="0" src="/images/edit.png?1273610204" /></a></td>
-
-	<td class="button"><a href="/users/2" onclick="if (confirm('Are you sure?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'Q8bP5V5D4d7WX+1nmFQVhrOhBp/j9SMS50q9q1LdlIQ='); f.appendChild(s);f.submit(); };return false;"><img alt="Delete" border="0" src="/images/delete.png?1273610374" /></a></td>
-	<td><a href="/users/2">Latimer Q. Dodd</a></td>
-	<td>2
-    <td>ldodd@mica.edu</td>
-    <td>(410) 555-1212</td>
-    <td>Student</td>
-    <td>Graduate Research Lab</td>
-
-    <td>May 2010</td>
-    <td>Customer</td>
-  </tr>
-
-  <tr class="even">
-  	<td class="button"><a href="/users/3"><img alt="Show" border="0" src="/images/show.png?1273610176" /></a></td>
-	<td class="button"><a href="/users/3/edit"><img alt="Edit" border="0" src="/images/edit.png?1273610204" /></a></td>
-	<td class="button"><a href="/users/3" onclick="if (confirm('Are you sure?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'Q8bP5V5D4d7WX+1nmFQVhrOhBp/j9SMS50q9q1LdlIQ='); f.appendChild(s);f.submit(); };return false;"><img alt="Delete" border="0" src="/images/delete.png?1273610374" /></a></td>
-
-	<td><a href="/users/3">John Smith</a></td>
-	<td>0
-    <td>jsmith@mica.edu</td>
-    <td>(410) 555-1313</td>
-    <td>Faculty</td>
-    <td>Graduate Research Lab</td>
-    <td>May 2010</td>
-
-    <td>Staff</td>
-  </tr>
-
-</table>
--->		
-			
-<!--			<div class="centered">
-				<h2>Please fill out this form</h2>
-				<form>
-					<p></p><label>Name</label><br/>
-					<input type="text" size="30"/></p>
-					<p><label>Email</label><br/>
-					<input type="text" size="30"/></p>
-					<p><label>Date of birth</label><br/>
-					<input type="text" size="30"/></p>
-					
-					<p><label>Width and height</label><br/>
-					<input type="text" size="5"/> x <input type="text" size="5"/></p>
-					
-					<input type="submit" value="log in"/><br/>
-				</form>
--->
-				
-			</div>
-			
-</div><!--end page div-->
-		<br class="clear"/>	
-		</div><!--end content-->
-		
-		</div><!--end wrapper-->
-	</body>
+                    <div class="flash" id="<%=h type %>">
+                        <%= content_tag(:p, content) %>
+                    </div>
+                    <% end %><%= yield %>
+                </div><!--end content-->
+                <br class="clear">
+            </div><!--end page div-->
+        </div><!--end wrapper-->
+    </body>
 </html>
+

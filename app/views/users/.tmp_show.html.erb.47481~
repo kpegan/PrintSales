@@ -1,5 +1,0 @@
-<% if @user.is_an_admin? %>
-<h2>This person is an admin.</h2>
-<% else %>
-<h2>This person is NOT an admin.</h2>
-<% end %>

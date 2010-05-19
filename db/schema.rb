@@ -9,13 +9,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100518194307) do
+ActiveRecord::Schema.define(:version => 20100519035522) do
 
   create_table "departments", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description"
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.string   "user_id"
+    t.string   "staff_id"
+    t.string   "file"
+    t.float    "paper_width"
+    t.float    "paper_height"
+    t.float    "image_width"
+    t.float    "image_height"
+    t.decimal  "paper_price"
+    t.decimal  "ink_price"
+    t.integer  "quantity"
+    t.integer  "discount"
+    t.datetime "printed"
+    t.datetime "paid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "permissions", :force => true do |t|

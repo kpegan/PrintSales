@@ -25,7 +25,7 @@
 	<td class="button"><%= link_to image_tag("edit.png", :border=>0), edit_user_path(user) %></td>
 	<td class="button"><%= link_to image_tag("delete.png", :border=>0), user, :confirm => 'Are you sure?', :method => :delete %></td>
 	<td><%= link_to user.full_name, user %></td>
-	<td><%#= user.jobs.find(:all,:conditions => "paid IS NULL").count %>
+	<td><%=h user.jobs.find(:all,:conditions => "paid IS NULL").count %>
     <td><%=h user.email %></td>
     <td><%=h user.phone_formatted %></td>
     <td><%=h user.position %></td>

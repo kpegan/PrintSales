@@ -1,64 +1,67 @@
-<h1>Editing job</h1>
+<% content_for :page_class, "centered" %>
 
-<% form_for(@job) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :staff_id %><br />
-    <%= f.text_field :staff_id %>
-  </p>
-  <p>
-    <%= f.label :file %><br />
-    <%= f.text_field :file %>
-  </p>
-  <p>
-    <%= f.label :paper_width %><br />
-    <%= f.text_field :paper_width %>
-  </p>
-  <p>
-    <%= f.label :paper_height %><br />
-    <%= f.text_field :paper_height %>
-  </p>
-  <p>
-    <%= f.label :image_width %><br />
-    <%= f.text_field :image_width %>
-  </p>
-  <p>
-    <%= f.label :image_height %><br />
-    <%= f.text_field :image_height %>
-  </p>
-  <p>
-    <%= f.label :paper_price %><br />
-    <%= f.text_field :paper_price %>
-  </p>
-  <p>
-    <%= f.label :ink_price %><br />
-    <%= f.text_field :ink_price %>
-  </p>
-  <p>
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </p>
-  <p>
-    <%= f.label :discount %><br />
-    <%= f.text_field :discount %>
-  </p>
-  <p>
-    <%= f.label :printed %><br />
-    <%= f.datetime_select :printed %>
-  </p>
-  <p>
-    <%= f.label :paid %><br />
-    <%= f.datetime_select :paid %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<% content_for(:page_nav) do %>
+	<li><%= link_to "Back to user", @job.user %></li>
 <% end %>
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+<% content_for(:page_info) do %>
+	<p>Staff: <%=h @job.staff.first_name %></p>
+	<p><%=h @job.status %></p>
+<% end %>
+
+<% form_for(@job) do |f| %>
+
+  <%= f.error_messages %>
+  
+  <%= f.hidden_field :staff_id, :value => current_user.id %>
+  <%= f.hidden_field :paper_price %>
+  <%= f.hidden_field :ink_price %> 
+
+  <%= f.text_field :file, :size => 25 %>
+  
+<table id="invoice_table" cellspacing="0">
+	<tr class="item">
+		<th>Paper</th>
+		<td><%= f.text_field :paper_width, :size => 4 %> x <%= f.text_field :paper_height, :size => 4 %></td>
+		<td><%#=h "%5.2f" % @job.paper_area %> sq. ft. @ <%=h number_to_currency current_paper_price %></td>
+		<td><%#=h number_to_currency @job.paper_price  * @job.paper_area %></td>
+	</tr>	
+	<tr class="item">
+		<th>Image</th>
+		<td><%= f.text_field :image_width, :size => 4 %> x <%= f.text_field :image_height, :size => 4 %></td>
+		<td><%#=h "%5.2f" % @job.image_area %> sq. ft. @ <%=h number_to_currency current_ink_price%></td>
+		<td><%#=h number_to_currency @job.ink_price  * @job.image_area %></td>
+	</tr>
+	<tr class="total">	
+		<td></td>
+		<td></td>
+		<th>Print</th>
+		<td><%#=h number_to_currency @job.print_cost %></td>
+	</tr>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th></th>
+		<td>x <%= f.text_field :quantity, :size => 4 %></td>
+	</tr>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th>Total</th>
+		<td><strong><%#=h number_to_currency @job.total %></strong></td>
+	</tr>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th>Discount</th>
+		<td><%#=h number_to_percentage @job.discount %></td>
+	</tr>
+	<tr class="total">
+		<td></td>
+		<td></td>
+		<th>Final</th>
+		<td><strong><%#=h number_to_currency @job.discounted_total %></strong></td>
+	</tr>
+</table>
+<%= f.submit 'Submit' %>
+<% end %>
