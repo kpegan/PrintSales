@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @table_caption = "Unpaid print jobs"
     #Find all unpaid print jobs by this user
-    @jobs = @user.jobs.find(:all, :conditions => "paid IS NULL")
+    @jobs = @user.jobs.find(:all, :conditions => "paid_at IS NULL")
     @total_bill = 0;
     for job in @jobs
       @total_bill += job.discounted_total

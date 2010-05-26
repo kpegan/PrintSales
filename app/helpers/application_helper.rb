@@ -4,7 +4,7 @@ module ApplicationHelper
     "Grad Print Sales"
   end
   
-  def table
+  def table ( )
     #display table of data
     
   end

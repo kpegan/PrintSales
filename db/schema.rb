@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100519035522) do
+ActiveRecord::Schema.define(:version => 20100526150512) do
 
   create_table "departments", :force => true do |t|
     t.string   "name"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20100519035522) do
     t.decimal  "ink_price"
     t.integer  "quantity"
     t.integer  "discount"
-    t.datetime "printed"
-    t.datetime "paid"
+    t.datetime "printed_at"
+    t.datetime "paid_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

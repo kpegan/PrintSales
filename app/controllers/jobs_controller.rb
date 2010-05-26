@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   # GET /jobs.xml
   def index
     if params[:user_id].nil?
-      @jobs = Job.find :all, :order => "paid, printed"
+      @jobs = Job.find :all, :order => "paid_at, printed_at"
       @total_unpaid = 0;
       for job in @jobs
         @total_unpaid += job.discounted_total if job.paid.nil?
@@ -114,7 +114,7 @@ class JobsController < ApplicationController
   def print
     @job = Job.find(params[:id])
     respond_to do |format|
-      if @job.update_attributes(:printed => Time.now() )
+      if @job.update_attributes(:printed_at => Time.now() )
         flash[:notice] = 'Job is now set to printed.'
         format.html { redirect_to(@job) }
         format.xml  { head :ok }
@@ -129,7 +129,7 @@ class JobsController < ApplicationController
   def void_printed
     @job = Job.find(params[:id])
     respond_to do |format|
-      if @job.update_attributes(:printed => nil )
+      if @job.update_attributes(:printed_at => nil )
         flash[:notice] = 'Job is now set to requested.'
         format.html { redirect_to(@job) }
         format.xml  { head :ok }
@@ -144,7 +144,7 @@ class JobsController < ApplicationController
   def void_payment
     @job = Job.find(params[:id])
     respond_to do |format|
-      if @job.update_attributes(:paid => nil )
+      if @job.update_attributes(:paid_at => nil )
         flash[:notice] = 'Job is now set to printed.'
         format.html { redirect_to(@job) }
         format.xml  { head :ok }

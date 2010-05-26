@@ -31,10 +31,10 @@ class Job < ActiveRecord::Base
   end
   
   def status
-    unless paid.nil?
+    unless paid_at.nil?
       status = "paid"
     else
-      unless printed.nil?
+      unless printed_at.nil?
         status = "printed"
       else
         unless created_at.nil?
@@ -47,11 +47,11 @@ class Job < ActiveRecord::Base
   end
   
   def status_date
-    unless paid.nil?
-      status = "Paid on " + paid.strftime("%m/%d/%Y")
+    unless paid_at.nil?
+      status = "Paid on " + paid_at.strftime("%m/%d/%Y")
     else
-      unless printed.nil?
-        status = "Printed on " + printed.strftime("%m/%d/%Y")
+      unless printed_at.nil?
+        status = "Printed on " + printed_at.strftime("%m/%d/%Y")
       else
         unless created_at.nil?
           status = "Requested on " + created_at.strftime("%m/%d/%Y")
