@@ -30514,3 +30514,42 @@ Rendering users/show
   [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
 Completed in 44ms (View: 20, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-05-26 11:12:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mJob Load (1.3ms)[0m   [0mSELECT * FROM "jobs" ORDER BY paid_at, printed_at[0m
+
+NoMethodError (undefined method `paid' for #<Job:0x1040e5970>):
+  app/controllers/jobs_controller.rb:11:in `index'
+  app/controllers/jobs_controller.rb:10:in `each'
+  app/controllers/jobs_controller.rb:10:in `index'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (93.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-05-26 11:13:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mJob Load (1.0ms)[0m   [0mSELECT * FROM "jobs" ORDER BY paid_at, printed_at[0m
+Rendering template within layouts/application
+Rendering jobs/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (39.0ms)
+Completed in 129ms (View: 106, DB: 3) | 200 OK [http://0.0.0.0/jobs]

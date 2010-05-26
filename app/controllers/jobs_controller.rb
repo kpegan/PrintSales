@@ -8,7 +8,7 @@ class JobsController < ApplicationController
       @jobs = Job.find :all, :order => "paid_at, printed_at"
       @total_unpaid = 0;
       for job in @jobs
-        @total_unpaid += job.discounted_total if job.paid.nil?
+        @total_unpaid += job.discounted_total if job.paid_at.nil?
       end
       @page_title = "Print jobs"
       @table_caption = ""
