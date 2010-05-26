@@ -29131,3 +29131,1281 @@ Rendering users/show
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
 Rendered shared/_table (12.6ms)
 Completed in 48ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-20 08:42:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.6ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.7ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (18.2ms)
+Completed in 291ms (View: 134, DB: 3) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-05-20 08:45:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 43ms (View: 41, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-20 08:45:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.3ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 207ms (View: 192, DB: 4) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-20 08:46:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 50ms (View: 35, DB: 3) | 200 OK [http://0.0.0.0/users]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-05-20 08:46:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mJob Load (1.0ms)[0m   [0;1mSELECT * FROM "jobs" ORDER BY paid, printed[0m
+Rendering template within layouts/application
+Rendering jobs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (38.8ms)
+Completed in 130ms (View: 46, DB: 3) | 200 OK [http://0.0.0.0/jobs]
+
+
+Processing JobsController#show (for 127.0.0.1 at 2010-05-20 08:46:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mJob Load (0.3ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering jobs/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 89ms (View: 68, DB: 2) | 200 OK [http://0.0.0.0/jobs/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-20 08:47:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mJob Load (0.3ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 117ms (View: 102, DB: 3) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-20 11:22:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.8ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mJob Load (0.7ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.7ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 184ms (View: 127, DB: 5) | 200 OK [http://0.0.0.0/users]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-05-25 13:40:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 83ms (View: 81, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-25 14:00:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 17ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-05-25 14:00:47) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"gFGOCpNOb7QX84yp4vBDI+JwInIwug1Oqcy0Af+t9Zo=", "controller"=>"sessions", "login"=>"kegan", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'kegan') LIMIT 1[0m
+Redirected to http://0.0.0.0:3001/
+Completed in 62ms (DB: 2) | 302 Found [http://0.0.0.0/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-05-25 14:00:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-25 14:00:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mJob Load (0.3ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.3ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.4ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 93ms (View: 78, DB: 4) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 14:00:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+Rendered shared/_table (2.5ms)
+Completed in 142ms (View: 52, DB: 1) | 200 OK [http://0.0.0.0/users/1]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-05-25 14:04:44) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;36;1mDepartment Load (0.4ms)[0m   [0;1mSELECT * FROM "departments" ORDER BY name[0m
+  [4;35;1mDepartment Load (0.4ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = '1') LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Rendered users/_form (38.4ms)
+Completed in 338ms (View: 322, DB: 2) | 200 OK [http://0.0.0.0/users/1/edit]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-25 14:04:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 51ms (View: 35, DB: 3) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 14:49:15) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.3ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+Rendered shared/_table (0.1ms)
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/users/1]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-05-25 14:49:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mJob Load (1.1ms)[0m   [0;1mSELECT * FROM "jobs" ORDER BY paid, printed[0m
+Rendering template within layouts/application
+Rendering jobs/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (116.7ms)
+Completed in 223ms (View: 176, DB: 3) | 200 OK [http://0.0.0.0/jobs]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 14:49:20) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.3ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (11.9ms)
+Completed in 47ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing JobsController#show (for 127.0.0.1 at 2010-05-25 14:49:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mJob Load (0.3ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs"."id" = 7) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering jobs/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 156ms (View: 134, DB: 1) | 200 OK [http://0.0.0.0/jobs/7]
+
+
+Processing JobsController#void_printed (for 127.0.0.1 at 2010-05-25 14:49:52) [GET]
+  Parameters: {"action"=>"void_printed", "id"=>"7", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mJob Load (0.4ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs"."id" = 7) [0m
+  [4;35;1mJob Update (0.4ms)[0m   [0mUPDATE "jobs" SET "updated_at" = '2010-05-25 18:49:52', "printed" = NULL WHERE "id" = 7[0m
+Redirected to http://0.0.0.0:3001/jobs/7
+Completed in 241ms (DB: 1) | 302 Found [http://0.0.0.0/jobs/void_printed/7]
+
+
+Processing JobsController#show (for 127.0.0.1 at 2010-05-25 14:49:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"jobs"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs"."id" = 7) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering jobs/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 33ms (View: 8, DB: 2) | 200 OK [http://0.0.0.0/jobs/7]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 14:54:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.2ms)[0m   [0mSELECT * FROM "permissions" [0m
+Rendering template within layouts/permissions
+Rendering permissions/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #7 of app/views/permissions/index.html.erb:
+4:   <tr>
+5:   </tr>
+6: 
+7: <% @permissions.each do |permission| %>
+8:   <tr>
+9:     <td><%= link_to 'Show', permission %></td>
+10:     <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
+
+    app/views/permissions/index.html.erb:7
+    app/controllers/permissions_controller.rb:9:in `index'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (108.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 14:54:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.3ms)[0m   [0mSELECT * FROM "permissions" [0m
+Rendering template within layouts/permissions
+Rendering permissions/index
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 14:54:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/permissions
+Rendering permissions/new
+Completed in 22ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/permissions/new]
+
+
+Processing PermissionsController#create (for 127.0.0.1 at 2010-05-25 14:54:50) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"gFGOCpNOb7QX84yp4vBDI+JwInIwug1Oqcy0Af+t9Zo=", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Create (0.4ms)[0m   [0;1mINSERT INTO "permissions" ("name", "created_at", "updated_at", "description") VALUES(NULL, '2010-05-25 18:54:50', '2010-05-25 18:54:50', NULL)[0m
+Redirected to http://0.0.0.0:3001/permissions/1
+Completed in 126ms (DB: 1) | 302 Found [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 14:54:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.2ms)[0m   [0;1mSELECT * FROM "permissions" WHERE ("permissions"."id" = 1) [0m
+Rendering template within layouts/permissions
+Rendering permissions/show
+Completed in 23ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/permissions/1]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 14:54:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.3ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/permissions
+Rendering permissions/index
+Completed in 21ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#destroy (for 127.0.0.1 at 2010-05-25 14:54:57) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"gFGOCpNOb7QX84yp4vBDI+JwInIwug1Oqcy0Af+t9Zo=", "id"=>"1", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.3ms)[0m   [0;1mSELECT * FROM "permissions" WHERE ("permissions"."id" = 1) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "permissions_roles" ON "roles".id = "permissions_roles".role_id WHERE ("permissions_roles".permission_id = 1 ) [0m
+  [4;36;1mPermission Destroy (0.2ms)[0m   [0;1mDELETE FROM "permissions" WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3001/permissions
+Completed in 137ms (DB: 1) | 302 Found [http://0.0.0.0/permissions/1]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 14:54:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.2ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/permissions
+Rendering permissions/index
+Completed in 23ms (View: 1, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 14:56:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.2ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/permissions
+Rendering permissions/index
+Completed in 21ms (View: 1, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:01:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.2ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/permissions
+Rendering permissions/index
+Completed in 18ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:01:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.2ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 19ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 15:01:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering permissions/new
+
+ActionView::TemplateError (undefined method `password_confirmation=' for #<Permission:0x10429b558>) on line #1 of app/views/permissions/_form.html.erb:
+1: <% @permission.password = @permission.password_confirmation = nil %>
+2: 
+3: <% form_for(@permission) do |f| %>
+4:   <%= f.error_messages %>
+
+    app/views/permissions/_form.html.erb:1
+    app/views/permissions/new.html.erb:8
+    app/controllers/permissions_controller.rb:31:in `new'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (115.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 15:02:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering permissions/new
+Rendered permissions/_form (3.7ms)
+Completed in 26ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/permissions/new]
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 15:07:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering permissions/new
+Rendered permissions/_form (3.6ms)
+Completed in 29ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/permissions/new]
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 15:08:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering permissions/new
+Rendered permissions/_form (3.8ms)
+Completed in 29ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/permissions/new]
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 15:08:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering permissions/new
+Rendered permissions/_form (3.7ms)
+Completed in 27ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/permissions/new]
+
+
+Processing PermissionsController#create (for 127.0.0.1 at 2010-05-25 15:08:45) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"gFGOCpNOb7QX84yp4vBDI+JwInIwug1Oqcy0Af+t9Zo=", "permission"=>{"name"=>"Leap tall buildings", "description"=>"This permission allows the user to jump really high."}, "controller"=>"permissions"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Create (0.4ms)[0m   [0mINSERT INTO "permissions" ("name", "created_at", "updated_at", "description") VALUES('Leap tall buildings', '2010-05-25 19:08:45', '2010-05-25 19:08:45', 'This permission allows the user to jump really high.')[0m
+Redirected to http://0.0.0.0:3001/permissions/2
+Completed in 91ms (DB: 1) | 302 Found [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 15:08:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.3ms)[0m   [0mSELECT * FROM "permissions" WHERE ("permissions"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering permissions/show
+Completed in 21ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/permissions/2]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 15:12:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.2ms)[0m   [0mSELECT * FROM "permissions" WHERE ("permissions"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering permissions/show
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/permissions/2]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:13:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.3ms)[0m   [0mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 28ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:13:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.3ms)[0m   [0mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 29ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 15:13:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering permissions/new
+Rendered permissions/_form (3.7ms)
+Completed in 26ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/permissions/new]
+
+
+Processing PermissionsController#create (for 127.0.0.1 at 2010-05-25 15:14:15) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"gFGOCpNOb7QX84yp4vBDI+JwInIwug1Oqcy0Af+t9Zo=", "permission"=>{"name"=>"Faster than a locomotive", "description"=>"This allow the user to go quickly."}, "controller"=>"permissions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Create (0.4ms)[0m   [0;1mINSERT INTO "permissions" ("name", "created_at", "updated_at", "description") VALUES('Faster than a locomotive', '2010-05-25 19:14:15', '2010-05-25 19:14:15', 'This allow the user to go quickly.')[0m
+Redirected to http://0.0.0.0:3001/permissions/3
+Completed in 105ms (DB: 1) | 302 Found [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 15:14:15) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.2ms)[0m   [0;1mSELECT * FROM "permissions" WHERE ("permissions"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering permissions/show
+Completed in 23ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/permissions/3]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-25 15:14:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.3ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 52ms (View: 37, DB: 4) | 200 OK [http://0.0.0.0/users]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:14:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.3ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:15:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.4ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:15:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.3ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 95ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 15:17:10) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.2ms)[0m   [0;1mSELECT * FROM "permissions" WHERE ("permissions"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering permissions/show
+Completed in 20ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/permissions/2]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:18:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load (0.3ms)[0m   [0;1mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#new (for 127.0.0.1 at 2010-05-25 15:18:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"permissions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering permissions/new
+Rendered permissions/_form (3.3ms)
+Completed in 87ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/permissions/new]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 15:18:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.2ms)[0m   [0mSELECT * FROM "permissions" WHERE ("permissions"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering permissions/show
+Completed in 21ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/permissions/2]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:18:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.3ms)[0m   [0mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 28ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 15:49:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.3ms)[0m   [0mSELECT * FROM "permissions" WHERE ("permissions"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering permissions/show
+Completed in 86ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/permissions/2]
+
+
+Processing PermissionsController#show (for 127.0.0.1 at 2010-05-25 15:49:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.2ms)[0m   [0mSELECT * FROM "permissions" WHERE ("permissions"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering permissions/show
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/permissions/2]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-25 15:50:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mRole Load (0.4ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.4ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 117ms (View: 102, DB: 4) | 200 OK [http://0.0.0.0/users]
+
+
+Processing PermissionsController#index (for 127.0.0.1 at 2010-05-25 15:50:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load (0.3ms)[0m   [0mSELECT * FROM "permissions" [0m
+Rendering template within layouts/application
+Rendering permissions/index
+Completed in 29ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/permissions]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-25 16:35:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mJob Load (0.6ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+  [4;36;1mDepartment Load (0.4ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.4ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid IS NULL)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+Completed in 56ms (View: 40, DB: 4) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 16:35:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.3ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (11.7ms)
+Completed in 44ms (View: 20, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#2 (for 127.0.0.1 at 2010-05-25 16:35:29) [GET]
+  Parameters: {"action"=>"2", "id"=>"pay", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to 2. Actions: charge, create, destroy, edit, index, new, pay, show, and update):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 16:36:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"pay", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=pay):
+  app/controllers/users_controller.rb:18:in `show'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#2 (for 127.0.0.1 at 2010-05-25 16:36:16) [GET]
+  Parameters: {"action"=>"2", "id"=>"pay", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to 2. Actions: charge, create, destroy, edit, index, new, pay, show, and update):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 16:40:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (12.4ms)
+Completed in 45ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 09:57:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.8ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (132.1ms)
+Completed in 291ms (View: 229, DB: 3) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:10:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+
+ActionView::TemplateError (can't convert nil into String) on line #17 of app/views/users/show.html.erb:
+14: 	<p><%=h @user.email %>, <%=h @user.phone_formatted %>
+15: <% end %>
+16: 
+17: <%=h listAandR %>
+18: 
+19: <%= render :partial => 'shared/table' %>
+
+    app/helpers/application_helper.rb:8:in `listAandR'
+    app/views/users/show.html.erb:17
+    app/controllers/users_controller.rb:29:in `show'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (111.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:11:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `resource' for #<ActionView::Base:0x1043e9018>) on line #17 of app/views/users/show.html.erb:
+14: 	<p><%=h @user.email %>, <%=h @user.phone_formatted %>
+15: <% end %>
+16: 
+17: <%=h listAandR %>
+18: 
+19: <%= render :partial => 'shared/table' %>
+
+    app/helpers/application_helper.rb:8:in `listAandR'
+    app/views/users/show.html.erb:17
+    app/controllers/users_controller.rb:29:in `show'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (105.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:12:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `resource' for #<ActionView::Base:0x10441f410>) on line #17 of app/views/users/show.html.erb:
+14: 	<p><%=h @user.email %>, <%=h @user.phone_formatted %>
+15: <% end %>
+16: 
+17: <%=h listAandR %>
+18: 
+19: <%= render :partial => 'shared/table' %>
+
+    app/helpers/application_helper.rb:8:in `listAandR'
+    app/views/users/show.html.erb:17
+    app/controllers/users_controller.rb:29:in `show'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:12:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.3ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered shared/_table (11.2ms)
+Completed in 45ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:24:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.3ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 46ms (View: 24, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:24:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 48ms (View: 25, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:27:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+ERROR: compiling _run_erb_app47views47users47show46html46erb RAISED compile error
+/Users/kpe/prog/ruby/rails/PrintSales/app/views/users/show.html.erb:63: syntax error, unexpected kELSE, expecting kEND
+;  else ; @output_buffer.concat "\n<p>No jobs to list.</p>\n"
+       ^
+/Users/kpe/prog/ruby/rails/PrintSales/app/views/users/show.html.erb:66: syntax error, unexpected kENSURE, expecting kEND
+/Users/kpe/prog/ruby/rails/PrintSales/app/views/users/show.html.erb:68: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47users47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+;  content_for(:page_nav) do ; @output_buffer.concat "\n\t<li>"
+; @output_buffer.concat(( link_to 'Edit user', edit_user_path ).to_s); @output_buffer.concat "</li>\n\t<li>"
+; @output_buffer.concat(( link_to 'Add print job', new_user_job_path(@user) ).to_s); @output_buffer.concat "</li>\n"
+;  end ; @output_buffer.concat "\n\n"
+
+;  content_for(:page_stat) do ; @output_buffer.concat "\n\t<h3 class=\"unpaid\">"
+; @output_buffer.concat((h number_to_currency @total_bill ).to_s); @output_buffer.concat "</h3>\n\t<p>Unpaid prints</p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+;  content_for(:page_info) do ; @output_buffer.concat "\n\t<p>"
+; @output_buffer.concat((h @user.position ).to_s); @output_buffer.concat ", "; @output_buffer.concat((h @user.department.name ).to_s); @output_buffer.concat "</p>\n\t<p>"
+; @output_buffer.concat((h @user.email ).to_s); @output_buffer.concat ", "; @output_buffer.concat((h @user.phone_formatted ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat "\n\n"
+
+;  unless @jobs.any? ; @output_buffer.concat "\n\n"
+
+;  form_tag job_pay_path, :method => :put do ; @output_buffer.concat "\n\n<table id=\"main_table\" cellspacing=\"0\">\n<caption>"
+
+
+; @output_buffer.concat((h @table_caption ).to_s); @output_buffer.concat "</caption>\n<tr>\n\t<th width=\"20px\"></th>\n\t<th width=\"20px\"></th>\n\t<th width=\"20px\"></th>\n\t<th width=\"20px\"></th>\n\t"
+
+
+
+
+
+;  if @user.nil? ; @output_buffer.concat "<th>User</th>";  end ; @output_buffer.concat "\n\t<th>Staff</th>\n\t<th>File</th>\n\t<th>Status</th>\n\t<th width=\"15%\">Paper size</th>\n\t<th width=\"15%\">Image size</th>\n\t<th width=\"5%\">Print cost</th>\n\t<th width=\"2%\">Qnty.</th>\n\t<th width=\"5%\">Total</th>\n\t<th width=\"3%\"></th>\n\t<th width=\"5%\">Final</th>\n</tr>\t\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+; for job in @jobs ; @output_buffer.concat "\n\t<tr class=\""
+; @output_buffer.concat(( cycle("odd", "even") ).to_s); @output_buffer.concat " "; @output_buffer.concat((h job.status ).to_s); @output_buffer.concat "\">\n\t\t<td></td>\n\t\t<td class=\"button\">"
+
+; @output_buffer.concat(( link_to image_tag("show.png", :border=>0), job ).to_s); @output_buffer.concat "</td>\n\t\t<td class=\"button\">"
+; @output_buffer.concat(( link_to image_tag("edit.png", :border=>0), edit_job_path(job) ).to_s); @output_buffer.concat "</td>\n\t\t<td class=\"button\">"
+; @output_buffer.concat(( link_to image_tag("delete.png", :border=>0), job, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n\t\t"
+;  if @user.nil? ; @output_buffer.concat "<td>"; @output_buffer.concat(( link_to job.user.full_name, job.user ).to_s); @output_buffer.concat "</td>";  end ; @output_buffer.concat "\n\t\t<td>"
+; @output_buffer.concat((h job.staff.first_name ).to_s); @output_buffer.concat "</td>\n\t\t<td>"
+; @output_buffer.concat((h job.file ).to_s); @output_buffer.concat "</td>\n\t\t<td>"
+; @output_buffer.concat((h job.status_date ).to_s); @output_buffer.concat "</td>\n\t\t<td>"
+; @output_buffer.concat((h job.paper_width ).to_s); @output_buffer.concat "\" x "; @output_buffer.concat((h job.paper_height ).to_s); @output_buffer.concat "\"</td>\n\t\t<td>"
+; @output_buffer.concat((h job.image_width ).to_s); @output_buffer.concat "\" x "; @output_buffer.concat((h job.image_height ).to_s); @output_buffer.concat "\"</td>\n\t\t<td>"
+; @output_buffer.concat((h number_to_currency job.print_cost).to_s); @output_buffer.concat "</td>\n\t\t<td>"
+; @output_buffer.concat((h job.quantity ).to_s); @output_buffer.concat "</td>\n\t\t<td>"
+; @output_buffer.concat((h number_to_currency job.total ).to_s); @output_buffer.concat "</td>\n\t\t<td>"
+; @output_buffer.concat((h number_to_percentage job.discount, :precision => 2 ).to_s); @output_buffer.concat "</td>\n\t\t<td class=\"total\">"
+; @output_buffer.concat((h number_to_currency job.discounted_total ).to_s); @output_buffer.concat "</td>\n\t</tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n"
+
+;  else ; @output_buffer.concat "\n<p>No jobs to list.</p>\n"
+
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/kpe/prog/ruby/rails/PrintSales/app/views/users/show.html.erb:68:in `compile!'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/kpe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/kpe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/kpe/prog/ruby/rails/PrintSales/app/controllers/users_controller.rb:29:in `show'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/kpe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/kpe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/kpe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/kpe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/kpe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/kpe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/kpe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/kpe/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+-e:2:in `load'
+-e:2
+
+ActionView::TemplateError (compile error
+/Users/kpe/prog/ruby/rails/PrintSales/app/views/users/show.html.erb:63: syntax error, unexpected kELSE, expecting kEND
+;  else ; @output_buffer.concat "\n<p>No jobs to list.</p>\n"
+       ^
+/Users/kpe/prog/ruby/rails/PrintSales/app/views/users/show.html.erb:66: syntax error, unexpected kENSURE, expecting kEND
+/Users/kpe/prog/ruby/rails/PrintSales/app/views/users/show.html.erb:68: syntax error, unexpected $end, expecting kEND) on line #63 of app/views/users/show.html.erb:
+60: 	</tr>
+61: <% end %>
+62: </table>
+63: <% else %>
+64: <p>No jobs to list.</p>
+65: <% end %>
+
+    app/views/users/show.html.erb:68:in `compile!'
+    app/controllers/users_controller.rb:29:in `show'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:28:02) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+Completed in 35ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:28:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 117ms (View: 25, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:30:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.3ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `job_pay_path' for #<ActionView::Base:0x1042bf2f0>) on line #21 of app/views/users/show.html.erb:
+18: 
+19: <% if @jobs.any? %>
+20: 
+21:   <% form_tag job_pay_path, :method => :put do %>
+22: 
+23: <table id="main_table" cellspacing="0">
+24: <caption><%=h @table_caption %></caption>
+
+    app/views/users/show.html.erb:21
+    app/controllers/users_controller.rb:29:in `show'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (104.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:30:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `jobs_pay_path' for #<ActionView::Base:0x104260408>) on line #21 of app/views/users/show.html.erb:
+18: 
+19: <% if @jobs.any? %>
+20: 
+21:   <% form_tag jobs_pay_path, :method => :put do %>
+22: 
+23: <table id="main_table" cellspacing="0">
+24: <caption><%=h @table_caption %></caption>
+
+    app/views/users/show.html.erb:21
+    app/controllers/users_controller.rb:29:in `show'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (110.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:39:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `pay_jobs_path' for #<ActionView::Base:0x103fa9688>) on line #21 of app/views/users/show.html.erb:
+18: 
+19: <% if @jobs.any? %>
+20: 
+21:   <% form_tag pay_jobs_path, :method => :put do %>
+22: 
+23: <table id="main_table" cellspacing="0">
+24: <caption><%=h @table_caption %></caption>
+
+    app/views/users/show.html.erb:21
+    app/controllers/users_controller.rb:29:in `show'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:40:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 41ms (View: 20, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:40:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.6ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.3ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 113ms (View: 20, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:46:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.5ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.3ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 49ms (View: 25, DB: 2) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 10:46:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (0.6ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid IS NULL)) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 114ms (View: 26, DB: 2) | 200 OK [http://0.0.0.0/users/2]

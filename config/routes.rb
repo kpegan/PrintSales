@@ -1,6 +1,4 @@
-ActionController::Routing::Routes.draw do |map|
-  
- 
+ActionController::Routing::Routes.draw do |map| 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   
@@ -10,10 +8,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many => :jobs, :shallow => true
   map.resource :session
   
-  map.resources :jobs, :only => [:index]
+  map.resources :jobs, :only => [:index], :collection => { :pay => :put }
   
   map.resources :departments
   map.resources :roles
+  map.resources :permissions
   
   # The priority is based upon order of creation: first created -> highest priority.
 

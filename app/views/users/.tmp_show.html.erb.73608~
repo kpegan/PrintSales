@@ -1,5 +1,4 @@
 <%# USER SHOW VIEW%>
-
 <% content_for(:page_nav) do %>
 	<li><%= link_to 'Edit user', edit_user_path %></li>
 	<li><%= link_to 'Add print job', new_user_job_path(@user) %></li>
@@ -14,5 +13,4 @@
 	<p><%=h @user.position %>, <%=h @user.department.name %></p>
 	<p><%=h @user.email %>, <%=h @user.phone_formatted %>
 <% end %>
-
 <%= render :partial => 'shared/table' %>

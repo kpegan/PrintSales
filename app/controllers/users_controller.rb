@@ -55,6 +55,7 @@ class UsersController < ApplicationController
       @user.graduation = nil unless @user.position = "student"
     
       @page_title = "Create new user account"
+      
       success = @user && @user.save
       if success && @user.errors.empty?
         # Protects against session fixation attacks, causes request forgery
@@ -79,7 +80,6 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    
     @user = User.find(params[:id])
     @form_data = params[:user]
     @form_data[:role_id]= @user.role_id unless logged_in? and current_user.is_an_admin?
@@ -88,8 +88,7 @@ class UsersController < ApplicationController
       @form_data["graduation(2i)"] = "" 
       @form_data["graduation(3i)"] = "" 
     end
-    
-    
+       
     respond_to do |format|
       if @user.update_attributes(@form_data)
         flash[:notice] = 'User was successfully updated.'
@@ -103,7 +102,6 @@ class UsersController < ApplicationController
 
   end
   
-
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy

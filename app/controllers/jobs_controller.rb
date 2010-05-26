@@ -93,6 +93,9 @@ class JobsController < ApplicationController
   end
   
   def pay
+    #Pay selected jobs
+
+=begin
     @job = Job.find(params[:id])
     respond_to do |format|
       if @job.update_attributes(:paid => Time.now() )
@@ -105,6 +108,7 @@ class JobsController < ApplicationController
         format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }       
       end
     end
+=end
   end
 
   def print

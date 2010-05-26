@@ -4,7 +4,9 @@ module ApplicationHelper
     "Grad Print Sales"
   end
   
-  def listAandR(action = action_name, resource = nil)
-      "Action: " + action_name + "  Resource: " + resource
+  def table
+    #display table of data
+    
   end
+  
 end

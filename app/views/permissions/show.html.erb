@@ -1,0 +1,9 @@
+<%# PERMISSION SHOW VIEW%>
+<% content_for(:page_nav) do %>
+	<li><%= link_to 'Edit', edit_permission_path(@permission) %></li>
+	<li><%= link_to 'List permissions', permissions_path %></li>
+<% end %>
+
+<% content_for(:page_info) do %>
+	<p><%=h @permission.description %></p>
+<% end %>
