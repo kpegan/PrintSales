@@ -1,0 +1,77 @@
+<%# USER SHOW VIEW%>
+<% content_for(:page_nav) do %>
+	<li><%= link_to 'Edit user', edit_user_path %></li>
+	<li><%= link_to 'Add print job', new_user_job_path(@user) %></li>
+<% end %>
+
+<% content_for(:page_stat) do %>
+	<h3 class="unpaid"><%=h number_to_currency @total_bill %></h3>
+	<p>Unpaid prints</p>
+<% end %>
+
+<% content_for(:page_info) do %>
+	<p><%=h @user.position %>, <%=h @user.department.name %></p>
+	<p><%=h @user.email %>, <%=h @user.phone_formatted %>
+<% end %>
+
+<% columns = {:staff_id => "Staff", :file => "Filename" }%>
+
+
+
+
+
+<%= table @jobs, ['Monkey', 'Banana', 'Header3'] %>
+<%#= render :partial => 'shared/table' %>
+
+<% if @jobs.any? %>
+
+  <% form_tag url_for(:action=>"pay", :controller=>"jobs") , :method => :put do %>
+  <%= hidden_field_tag :user_id, @user.id %>
+
+<table id="main_table" cellspacing="0">
+<caption><%=h @table_caption %></caption>
+
+<tr>
+	<th width="20px"></th>
+	<th width="20px"></th>
+	<th width="20px"></th>
+	<th width="20px"></th>
+	<% if @user.nil? %><th>User</th><% end %>
+	<th>Staff</th>
+	<th>File</th>
+	<th>Status</th>
+	<th width="15%">Paper size</th>
+	<th width="15%">Image size</th>
+	<th width="5%">Print cost</th>
+	<th width="2%">Qnty.</th>
+	<th width="5%">Total</th>
+	<th width="3%"></th>
+	<th width="5%">Final</th>
+</tr>	
+
+    <%for job in @jobs %>
+	<tr class="<%= cycle("odd", "even") %> <%=h job.status %>">	
+			
+<% table_row job do %>
+		<% if @user.nil? %><td><%= link_to job.user.full_name, job.user %></td><% end %>
+		<td><%=h job.staff.first_name %></td>
+		<td><%=h job.file %></td>
+		<td><%=h job.status_date %></td>
+		<td><%=h job.paper_width %>" x <%=h job.paper_height %>"</td>
+		<td><%=h job.image_width %>" x <%=h job.image_height %>"</td>
+		<td><%=h number_to_currency job.print_cost%></td>
+		<td><%=h job.quantity %></td>
+		<td><%=h number_to_currency job.total %></td>
+		<td><%=h number_to_percentage job.discount, :precision => 2 %></td>
+		<td class="total"><%=h number_to_currency job.discounted_total %></td>
+<% end %>
+
+    <% end %>
+	
+</table>
+  <%= submit_tag "Pay selected", :confirm => 'Are you sure?'%>
+  <% end %><%# End form tag%>
+
+<% else %>
+<p>No jobs to list.</p>
+<% end %>

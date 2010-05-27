@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-  before_filter :login_required
   
   # GET /jobs
   # GET /jobs.xml
@@ -92,23 +91,44 @@ class JobsController < ApplicationController
     end
   end
   
+  # DELETE /jobs/1
+  # DELETE /jobs/1.xml
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(jobs_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
   def pay
     #Pay selected jobs
-
-=begin
-    @job = Job.find(params[:id])
-    respond_to do |format|
-      if @job.update_attributes(:paid => Time.now() )
-        flash[:notice] = 'Job is now paid.'
-        format.html { redirect_to(@job) }
-        format.xml  { head :ok }
-      else
-        flash[:error] = 'An error occured. Job could not be set to paid.'
-        format.html { redirect_to(@job) }
-        format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }       
+    @page_title = "Receipt"
+    
+    if params[:job_ids].any?
+      @user = User.find params[:user_id]
+      @jobs = Job.find params[:job_ids] 
+      
+      @total = 0
+      for job in @jobs
+        if job.printed_at.nil? 
+          job.update_attributes(:printed_at => Time.now())
+        end
+        if job.update_attributes(:paid_at => Time.now())
+          @total += job.discounted_total
+        end
       end
+      total_string = "%5.2f" % @total
+    else
+      flash[:error] = "You didn't select any print jobs."
+    end  
+  
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @jobs }
     end
-=end
   end
 
   def print
@@ -154,17 +174,7 @@ class JobsController < ApplicationController
         format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }       
       end
     end
-  end
+   
+  end 
   
-  # DELETE /jobs/1
-  # DELETE /jobs/1.xml
-  def destroy
-    @job = Job.find(params[:id])
-    @job.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(jobs_url) }
-      format.xml  { head :ok }
-    end
-  end
 end

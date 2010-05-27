@@ -1,5 +1,4 @@
 class PermissionsController < ApplicationController
-  before_filter :login_required
 
   # GET permissions
   # GET permissions.xml

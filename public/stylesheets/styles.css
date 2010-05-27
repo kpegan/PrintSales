@@ -16,15 +16,15 @@ h1, h2, h3, h4, h5, p {
 	font-weight: normal;
 	padding: 0px;
 	margin: 0px;
-	margin-top: 0em;
-	margin-bottom: 0em;
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
 }
 #site_title h2 {
 	font-weight: normal;
 	font-size: 1.1em;
 	margin: 0;
 }
-#login_form p{
+#login_status p{
 	font-size: 0.9em;
 }
 h1#page_title {
@@ -66,7 +66,7 @@ body {
 #banner #logo {
 	float: left;
 }
-#banner, #site_title, #site_nav, #login_form {
+#banner, #site_title, #site_nav, #login_status {
 	height: 35px;
 }
 #site_title {
@@ -78,12 +78,12 @@ body {
 	margin-top: 5px;
 	margin-left: 90px;
 }
-#login_form {
+#login_status {
 	float: right;
 	width: 350px;
 	text-align: right;
 }
-#login_form form, #login_form p {
+#login_status form, #login_status p {
 	padding-top: 8px;
 }
 
@@ -192,24 +192,8 @@ a {
 	color: #555;
 	text-transform: uppercase;
 }
-#invoice_table {
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	margin-top: 2em;
-}
-#invoice_table th, #invoice_table td {
+#main_table .number, .total {
 	text-align: right;
-	padding: 0.1em;
-
-}
-#invoice_table tr.item th, #invoice_table tr.item td {
-	border-bottom: 1px solid #333;
-	padding: 0.5em;
-	padding-right: 0.1em;
-}
-#invoice_table tr.item th {
-	text-align: left;
 }
 #main_table {
 	width: 100%;
@@ -229,11 +213,15 @@ a {
 	color: #666;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	text-align: left;
 	vertical-align: bottom;
 }
 #main_table th {
+	padding-right: 0.5em;
 	padding-left: 0.5em;
+}
+#main_table tr.total {
+	font-weight: bold;
+	font-size: 1.4em;
 }
 #main_table caption {
 	font-weight: bold;
@@ -247,6 +235,10 @@ a {
 	text-decoration: none;
 	font-size: 0.7em;
 	font-weight: bold;
+}
+
+#invoice_table {
+	width: 100%;
 }
 
 /* CENTERED PAGE */

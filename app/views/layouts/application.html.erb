@@ -19,15 +19,13 @@
                     <h2><%=h site_title%></h2>
                 </div>
 
-                <div id="login_form">
+                <div id="login_status">
                     <% if logged_in? %>
                     	<p><span class="greeting">Hello, <%=h current_user.first_name %>.</span> 
 						<%= link_to "Log out", logout_path %></p>
                     <% else %>
-						<% form_tag session_path do %>
-							<%= text_field_tag 'login', @login, :size => 14, :value => "User name" %><%= password_field_tag 'password', nil, :size => 14  %><br/>
-                    		<%= submit_tag 'Log in', :class => "button" %>
-                    	<% end %> 
+						<p><span class="greeting">Please </span> 
+						<%= link_to "log in", login_path %></p>
 			    	<% end %>
                 </div><!-- end login_form-->
 

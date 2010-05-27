@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_filter :login_required
 
   def index
     #have to be logged in to see user list
@@ -117,6 +116,13 @@ class UsersController < ApplicationController
       flash[:error]  = "That action is not permitted."
       redirect_back_or_default('/')
     end      
+  end
+  
+  def pay
+    #Pay selected print jobs
+    @user = User.find(params[:id])
+    flash[:notice] = "Yeah this works."
+    redirect_to(@user)
   end
   
 end

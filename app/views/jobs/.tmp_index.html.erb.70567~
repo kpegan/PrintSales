@@ -15,8 +15,8 @@
 <table id="main_table" cellspacing="0">
 <caption><%=h @table_caption %></caption>
 
-<%= render :partial => "table_header", :locals => {:buttons => true } %>
-<%= render :partial => "row", :collection => @jobs, :locals => {:buttons => true }   %>
+<%= render :partial => "table_header", :local => {:buttons => true } %>
+<%= render :partial => "row", :collection => @jobs, :local => {:buttons => true }   %>
 
 </table>
 <% else %>

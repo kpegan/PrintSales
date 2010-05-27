@@ -100,6 +100,10 @@ class User < ActiveRecord::Base
     end
   end
   
+  def unpaid_jobs
+    jobs.find(:all,:conditions => "paid_at IS NULL").count 
+  end
+  
   
   #Added for admin characteristics
   

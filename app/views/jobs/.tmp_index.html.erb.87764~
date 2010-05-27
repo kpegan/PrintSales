@@ -10,15 +10,5 @@
 	<p class="unpaid">Unpaid print jobs</p>
 <% end %>
 
-<% if @jobs.any? %>
 
-<table id="main_table" cellspacing="0">
-<caption><%=h @table_caption %></caption>
-
-<%= render :partial => "table_header", :locals => {:buttons => true } %>
-<%= render :partial => "row", :collection => @jobs, :locals => {:buttons => true }   %>
-
-</table>
-<% else %>
-<p>No prints jobs found.</p>
-<% end %>
+<%= render :partial => 'shared/table' %>
