@@ -1,6 +1,6 @@
 <%# USER NEW VIEW %>
 
-<% content_for :page_class, "center_box" %>
+<% content_for :page_class, "centered" %>
 
 <% content_for(:page_nav) do %>
 	<li><%= link_to "Back to user", @user %></li>

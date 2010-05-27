@@ -8,12 +8,20 @@ class Job < ActiveRecord::Base
     (paper_width * paper_height) / 144
   end
   
+  def paper_cost
+    paper_area * paper_price
+  end
+  
+  def ink_cost
+    image_area * ink_price
+  end
+  
   def image_area
     (image_width * image_height) / 144
   end
   
   def print_cost
-    print_cost = paper_area * paper_price + image_area * ink_price
+    print_cost = paper_cost + ink_cost
   end
   
   def total

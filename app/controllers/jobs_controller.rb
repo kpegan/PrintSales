@@ -28,7 +28,7 @@ class JobsController < ApplicationController
   # GET /jobs/1.xml
   def show
     @job = Job.find(params[:id])
-    @page_title = "'#{@job.file}' for #{@job.user.full_name}"
+    @page_title = "Print job for #{@job.user.full_name}"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +41,7 @@ class JobsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @job = @user.jobs.new
+
     @page_title = "New print job for " + @user.full_name 
 
     respond_to do |format|

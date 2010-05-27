@@ -86,16 +86,20 @@ body {
 #login_status form, #login_status p {
 	padding-top: 8px;
 }
-
 #site_nav {
 	display: block;
 	padding-top: 10px;
-	margin-bottom: 0px;
-	margin-left: 500px;
+	margin-bottom: 0;
+	margin-left: 450px;
 	margin-right: 360px;
 }
 #site_nav ul {
 	margin-top: 10px;
+}
+#site_nav ul li {
+	margin: 0;
+	margin-left: 0.2em;
+	padding: .5em;
 }
 #page_description {
 	margin-right: 400px;
@@ -117,12 +121,16 @@ body {
 }
 #banner {
 	background-color: #999;
+	border-bottom: 2px solid #777;
 }
 #site_title h2{
 	color: #EEE;
 }
 #site_nav a {
 	color: #FFF;
+}
+#site_nav ul li {
+	background-color: #777;
 }
 #page_nav a {
 	color: #333;
@@ -180,7 +188,14 @@ a {
 .left {
 	text-align: left;
 }
+.center, #print_job .center {
+	text-align: center;
+}
 /* TABLES AND FORMS */
+input[type=text] {
+	border: 0;
+	padding: 0.15em;
+}
 #content form, #content form p {
 	text-align: left;
 	margin-bottom: .5em;
@@ -237,12 +252,26 @@ a {
 	font-weight: bold;
 }
 
-#invoice_table {
+table#print_job {
 	width: 100%;
 }
 
+table#print_job {
+	width: 100%;
+}
+#print_job td, #print_job th {
+	padding: 0.5em 0.5em;
+	text-align: right;
+}
+#print_job th {
+	font-size: .85em;
+}
+#print_job input[type=text] {
+	text-align: right;
+}
+
 /* CENTERED PAGE */
-.centered {
+.center_box {
 	background-color: #DDD;
 	padding: 2.5em;
 	padding-top: 1.5em;
@@ -250,44 +279,48 @@ a {
 	margin-left: 25%;
 	margin-right: 25%;
 }
-.centered #page_stat {
+.center_box #content {
+	margin: 0;
+	padding: 0;
+}
+.center_box #page_stat {
 	display: none;
 }
-.centered fieldset {
+.center_box fieldset {
 	margin-left: 0;
 	margin-right: 0;
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 }
-.centered fieldset.half {
+.center_box fieldset.half {
 	width: 42%;
 	float: left;
 	margin-right: 1em;
 }
-.centered fieldset p {
+.center_box fieldset p {
 	float: left;
 	padding-right: 1em;
 } 
-.centered input, .centered select {
+.center_box input, .center_box select {
 	font-size: 1.1em;
 }
-.centered #page_description {
+.center_box #page_description {
 	margin: 0;
 	padding: 0;
 }
-.centered #page_header {
+.center_box #page_header {
 	margin: 0;
 	padding: 0;
 	text-align: left;
 }
-.centered #page_title {
+.center_box #page_title {
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
 	color: #333;
 	font-size: 1.5em;
 }
-.centered input[type=submit] {
+.center_box input[type=submit] {
 	float: right;
 	margin: .2em;
 	margin-right: 0em;

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <meta name="generator" content="HTML Tidy, see www.w3.org">
+        <meta http-equiv="Content-Type" content=
+        "text/html; charset=iso-8859-1">
+
+        <title><%=h site_title%> - <%=h @page_title%></title>
+        <%= stylesheet_link_tag 'styles' %>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="banner">
+                <div id="site_title">
+                    <img alt="" id="logo" src="/images/MICA_Logo_White.png"> 
+                    <h2><%=h site_title%></h2>
+                </div>
+
+                <div id="login_status">
+                    <% if logged_in? %>
+                    	<p><span class="greeting">Hello, <%=h current_user.first_name %>.</span> 
+						<%= link_to "Log out", logout_path %></p>
+                    <% else %>
+						<p><span class="greeting">Please </span> 
+						<%= link_to "log in", login_path %></p>
+			    	<% end %>
+                </div><!-- end login_form-->
+
+                <div id="site_nav">
+                    <ul class="horizontal_nav">
+                        <li><%= link_to "Users", :users %></li>
+                        <li><%= link_to "Print jobs", :jobs %></li>
+                        <li>Statistics</li>
+                        <li>Settings</li>
+                    </ul>
+                </div>
+                <br class="clear">
+            </div><!--end banner-->
+
+            <div id="page" class="<%= yield :page_class %>">
+                <div id="page_header">
+                    <div id="page_nav">
+                        <ul class="vertical_nav">
+                            <%= yield :page_nav %>
+                        </ul>
+                    </div>
+
+                    <div id="page_stat">
+                        <%= yield :page_stat %>
+                    </div>
+
+                    <div id="page_description">
+                        <h1 id="page_title"><%=h @page_title%></h1>
+                        <%= yield :page_info %>
+                    </div>
+                    <br class="clear">
+                </div><!--end page_header-->
+
+                <div id="content">
+                    <% flash.each do |type,content| %>
+
+                    <div class="flash" id="<%=h type %>">
+                        <%= content_tag(:p, content) %>
+                    </div>
+                    <% end %><%= yield %>
+                </div><!--end content-->
+                <br class="clear">
+            </div><!--end page div-->
+        </div><!--end wrapper-->
+    </body>
+</html>
+

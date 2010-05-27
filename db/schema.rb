@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100526150512) do
+ActiveRecord::Schema.define(:version => 20100527204251) do
 
   create_table "departments", :force => true do |t|
     t.string   "name"
@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(:version => 20100526150512) do
     t.string   "user_id"
     t.string   "staff_id"
     t.string   "file"
-    t.float    "paper_width"
-    t.float    "paper_height"
-    t.float    "image_width"
-    t.float    "image_height"
-    t.decimal  "paper_price"
-    t.decimal  "ink_price"
-    t.integer  "quantity"
+    t.float    "paper_width",  :default => 0.0
+    t.float    "paper_height", :default => 0.0
+    t.float    "image_width",  :default => 0.0
+    t.float    "image_height", :default => 0.0
+    t.decimal  "paper_price",  :default => 0.0
+    t.decimal  "ink_price",    :default => 0.0
+    t.integer  "quantity",     :default => 0
     t.integer  "discount"
     t.datetime "printed_at"
     t.datetime "paid_at"
