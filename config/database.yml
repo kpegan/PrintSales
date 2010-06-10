@@ -22,7 +22,7 @@ test:
 #  timeout: 5000
 
 production:
-  adaptor: mysql
+  adapter: mysql
   database: printsales_production
   username: root
   password: W1anvale5t132
