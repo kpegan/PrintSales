@@ -65,7 +65,7 @@ class UsersController < ApplicationController
       #changes current_user to new user, 
       #self.current_user = @user # !! now logged in
       redirect_to(users_path)
-      flash[:notice] = "#{@user.full_name} has be added as a user."
+      flash[:notice] = "#{@user.full_name} has been added as a user."
     else
       render :action => 'new'
     end
