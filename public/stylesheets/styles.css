@@ -71,7 +71,7 @@ body {
 }
 #site_title {
 	float: left;
-	width: 400px;
+	width: 280px;
 	padding-top: 2px;
 }
 #site_title h2{
@@ -80,7 +80,7 @@ body {
 }
 #login_status {
 	float: right;
-	width: 350px;
+	width: 150px;
 	text-align: right;
 }
 #login_status form, #login_status p {
@@ -90,8 +90,8 @@ body {
 	display: block;
 	padding-top: 10px;
 	margin-bottom: 0;
-	margin-left: 450px;
-	margin-right: 360px;
+	margin-left: 300px;
+	margin-right: 160px;
 }
 #site_nav ul {
 	margin-top: 10px;
