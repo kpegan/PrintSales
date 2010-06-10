@@ -16,8 +16,9 @@
 <table id="main_table" cellspacing="0">
 <caption><%=h @table_caption %></caption>
 
-<%= render :partial => "table_header", :locals => {:buttons => false } %>
-<%= render :partial => "row", :collection => @jobs, :locals => {:buttons => false } %>
+<table id="main_table" cellspacing="0">
+<%= render :partial => "jobs_table", :locals => {:rows => @jobs, :buttons => false, :checkbox => false }   %>
+
 	<tr class="total">
 		<td colspan="8"></td>
 		<td class="number">Total</td>

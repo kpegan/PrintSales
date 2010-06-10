@@ -1,4 +1,5 @@
-<% content_for :page_class, "centered" %>
+<%# JOB EDIT VIEW %>
+<% content_for :page_class, "center_box" %>
 
 <% content_for(:page_nav) do %>
 	<li><%= link_to "Back to user", @job.user %></li>
@@ -6,7 +7,6 @@
 
 <% content_for(:page_info) do %>
 	<p>Staff: <%=h @job.staff.first_name %></p>
-	<p><%=h @job.status %></p>
 <% end %>
 
 <%= render :partial => "form", :locals => {:buttons => true } %>

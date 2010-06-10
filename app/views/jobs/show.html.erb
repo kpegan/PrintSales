@@ -3,20 +3,6 @@
 
 <% content_for(:page_nav) do %>
 	<li><%= link_to 'Edit', edit_job_path(@job) %></li>
-	<% if @job.printed_at.nil? %>
-		<li><%= link_to 'Print', :action =>"print", :id=>@job %></li>
-	<% else %>
-		<% if @job.paid_at.nil? %>
-			<li><%= link_to 'Void printed', :action =>"void_printed", :id=>@job %></li>
-		<% end %>
-	<% end %>
-	<% if @job.paid_at.nil? and not @job.printed_at.nil? %>
-		<li><%= link_to 'Pay', :action =>"pay", :id=>@job %></li>
-	<% else %>
-		<% unless @job.printed_at.nil? %>
-			<li><%= link_to 'Void payment', :action =>"void_payment", :id=>@job %></li>
-		<% end %>
-	<% end %>
 	<li><%= link_to "Back to user", @job.user %>
 <% end %>
 

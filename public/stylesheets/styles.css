@@ -141,10 +141,26 @@ body {
 #page_stat h3.unpaid {
 	color: #E00;
 }
+#content .fieldWithErrors label { color: #E00; }
 
-tr.requested, tr.printed {
-	color: #E00;
+#errorExplanation {
+  background: #FFF;
 }
+#errorExplanation h2 {
+  background: #C00;
+  color: #FFF;
+}
+#errorExplanation p {
+  margin: 0.25em 1em;
+}
+#errorExplanation ul {
+  margin: 0;
+  padding-top: 0;
+}
+
+tr.requested{ color: #E00; }
+tr.printed { color: #E70; }
+tr.paid { color: #666; }
 
 #error { background-color: #E00; color: #600; }
 #warning { background-color: #FF6; color: #660; }
@@ -191,8 +207,34 @@ a {
 .center, #print_job .center {
 	text-align: center;
 }
+.fieldWithErrors { display: inline; margin: 0; padding: 0; }
+
+#errorExplanation {
+  margin: 0em;
+  margin-top: .5em;
+  margin-bottom: 1em;
+  padding: 0;
+  padding-bottom: 1em;
+}
+#errorExplanation h2 {
+  background: #C00;
+  font-size: 1.2em;
+  padding: 0.2em 0.5em;
+  text-align: center;
+}
+#errorExplanation p {
+  margin: 0.25em 1em;
+}
+#errorExplanation ul {
+  margin: 0;
+  padding-top: 0;
+}
+
+input[type=submit] {
+	border: 1px solid #999;
+}
 /* TABLES AND FORMS */
-input[type=text] {
+input[type=text], input[type=password] {
 	border: 0;
 	padding: 0.15em;
 }
@@ -212,7 +254,8 @@ input[type=text] {
 }
 #main_table {
 	width: 100%;
-	margin-top: 1em;
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
 	font-size: 0.8em;
 }
 #main_table tr.odd {
@@ -297,9 +340,15 @@ table#print_job {
 	float: left;
 	margin-right: 1em;
 }
+.center_box fieldset p.field_area {
+	float: left;
+	padding: 0;
+	margin-right: 1em;
+} 
 .center_box fieldset p {
 	float: left;
-	padding-right: 1em;
+	padding: 0;
+	margin-right: 0em;
 } 
 .center_box input, .center_box select {
 	font-size: 1.1em;

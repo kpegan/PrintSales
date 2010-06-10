@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @table_caption = "Unpaid print jobs"
     #Find all unpaid print jobs by this user
-    @jobs = @user.jobs.find(:all, :conditions => "paid_at IS NULL")
+    @jobs = @user.jobs.find(:all, :conditions => "paid_at IS NULL", :order => "paid_at, printed_at, created_at")
     @total_bill = 0;
     for job in @jobs
       @total_bill += job.discounted_total
@@ -46,33 +46,28 @@ class UsersController < ApplicationController
  
   def create
     #logout_keeping_session!
-    if current_user.is_an_admin?
       
-      @user = User.new(params[:user]) 
+    @user = User.new(params[:user]) 
     
-      @user.role_id = 5 unless current_user.is_an_admin?
-      @user.graduation = nil unless @user.position = "student"
+    @user.role_id = Role.find_by_name("Customer").id unless current_user.is_an_admin?
     
-      @page_title = "Create new user account"
+    @user.graduation = nil unless @user.position = "student"
+    
+    @page_title = "Create new user account"
       
-      success = @user && @user.save
-      if success && @user.errors.empty?
-        # Protects against session fixation attacks, causes request forgery
-        # protection if visitor resubmits an earlier form using back
-        # button. Uncomment if you understand the tradeoffs.
-        # reset session
+    success = @user && @user.save
+    if success && @user.errors.empty?
+      # Protects against session fixation attacks, causes request forgery
+      # protection if visitor resubmits an earlier form using back
+      # button. Uncomment if you understand the tradeoffs.
+      # reset session
       
-        #changes current_user to new user, 
-        #self.current_user = @user # !! now logged in
-        redirect_back_or_default('/')
-        flash[:notice] = "User created."
-      else
-        flash[:error]  = "New account could not be created."
-        render :action => 'new'
-      end
+      #changes current_user to new user, 
+      #self.current_user = @user # !! now logged in
+      redirect_to(users_path)
+      flash[:notice] = "#{@user.full_name} has be added as a user."
     else
-      flash[:error]  = "That action is not permitted."
-      redirect_back_or_default('/')
+      render :action => 'new'
     end
   end
   

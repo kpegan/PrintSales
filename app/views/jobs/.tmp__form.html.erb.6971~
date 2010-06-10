@@ -3,15 +3,15 @@
   <%= f.error_messages %>
   
   <%= f.hidden_field :staff_id, :value => current_user.id %>
+  <%= f.hidden_field :paper_price, :value => current_paper_price %>
+  <%= f.hidden_field :ink_price, :value => current_ink_price %> 
   
   <p>File: <%= f.text_field :file, :size => 25, :value => "Filename" %>
-  <% if controller.action_name != "new" %>
   <%= radio_button_tag "status", "requested", @job.status == "requested" ? "true" : "" %> Requested
   <%= radio_button_tag "status", "printed", @job.status == "printed" ? "true" : "" %> Printed
-  <%= radio_button_tag "status", "paid", @job.status == "paid" ? "true" : "" %> Paid 
-  <% end %> 
+  <%= radio_button_tag "status", "paid", @job.status == "paid" ? "true" : "" %> Paid  
   </p>
-
+  
 <table id="print_job" cellspacing="0">
 	<tr>
 		<th></th>
@@ -24,22 +24,22 @@
 		<th>Paper</th>
 		<td class="center"><%= f.text_field :paper_width, :size => 4 %>&nbsp;&nbsp;x&nbsp;&nbsp;
 		                   <%= f.text_field :paper_height, :size => 4 %></td>
-		<td id="paper_area"><%=h "%.2f" % @job.paper_area unless @job.paper_area.nil? %> sq. ft.</td>
-		<td id="paper_price"><%=h number_to_currency @job.paper_price unless @job.paper_price.nil? %></td>
-		<td id="paper_cost"><%=h number_to_currency @job.paper_cost unless @job.paper_cost.nil? %></td>
+		<td><%=h "%.2f" % @job.paper_area unless @job.paper_area.nil? %> sq. ft.</td>
+		<td><%=h number_to_currency @job.paper_price unless @job.paper_price.nil? %></td>
+		<td><%=h number_to_currency @job.paper_cost unless @job.paper_cost.nil? %></td>
 	</tr>	
 	<tr>
 		<th>Image</th>
 		<td class="center"><%= f.text_field :image_width, :size => 4 %>&nbsp;&nbsp;x&nbsp;&nbsp;
 		                   <%= f.text_field :image_height, :size => 4 %></td>
-		<td id="image_area"><%=h "%.2f" % @job.image_area unless @job.nil? %> sq. ft.</td>
-		<td id="ink_price"><%=h number_to_currency @job.ink_price unless @job.nil? %></td>
-		<td id="ink_cost"><%=h number_to_currency @job.ink_cost unless @job.nil? %></td>
+		<td><%=h "%.2f" % @job.image_area unless @job.nil? %> sq. ft.</td>
+		<td><%=h number_to_currency @job.ink_price unless @job.nil? %></td>
+		<td><%=h number_to_currency @job.ink_cost unless @job.nil? %></td>
 	</tr>
 	<tr class="border"></tr>
 	<tr>	
 		<th colspan="4">Print price</th>
-		<td id="print_cost"><%=h number_to_currency @job.print_cost %></td>
+		<td><%=h number_to_currency @job.print_cost %></td>
 	</tr>
 	<tr>
 		<th colspan="4">Qnty.</th>
@@ -48,7 +48,7 @@
 	<% unless @job.discount.nil? or @job.discount == 0 %>
 	<tr>
 		<th colspan="4">Subtotal</th>
-		<td id="total"><%=h number_to_currency @job.total %></td>
+		<td><%=h number_to_currency @job.total %></td>
 	</tr>
 	<tr>
 		<th colspan="4">Discount</th>

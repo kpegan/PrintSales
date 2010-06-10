@@ -1,5 +1,5 @@
-<%# USER EDIT VIEW %>
-<% content_for :page_class, "center_box" %>
+<%# USER NEW VIEW %>
+<% content_for :page_class, "centered" %>
 
 <% content_for(:page_nav) do %>
 	<li><%= link_to 'Show', @user %></li>
@@ -7,3 +7,4 @@
 <% end %>
 
 <%= render :partial => 'form' %>
+

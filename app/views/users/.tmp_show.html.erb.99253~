@@ -16,17 +16,15 @@
 
 <% if @jobs.any? %>
 
+<h3><%=h @table_caption %></h3>
 <% form_tag url_for(:action=>"pay", :controller=>"jobs") , :method => :put do %>
 <%= hidden_field_tag :user_id, @user.id %>
 
-<table id="main_table" cellspacing="0">
-<caption><%=h @table_caption %></caption>
+<%= submit_tag "Pay selected", :confirm => 'Are you sure?', :name => "submit" %>
+<%= submit_tag "Print selected", :confirm => 'Are you sure?', :name => "submit" %>
 
-<%= render :partial => "jobs/table_header", :locals => {:buttons => true } %>
-<%= render :partial => "jobs/row", :collection => @jobs, :locals => {:buttons => true }  %>
-</table>
+<%= render :partial => "jobs/jobs_table", :locals => {:rows => @jobs, :buttons => true, :checkbox => true } %>
 
-<%= submit_tag "Pay selected", :confirm => 'Are you sure?'%>
 <% end %><%# End form tag%>
 
 <% else %>

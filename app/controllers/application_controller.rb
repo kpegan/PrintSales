@@ -14,7 +14,18 @@ class ApplicationController < ActionController::Base
   
   protected
     def authorized?
-      logged_in?
+      unless authorized = logged_in? && current_user.is_an_admin_or_staff?
+        flash[:error] = "You do not have access to that area."
+      end
+      authorized
     end
-    
+  
+  def current_paper_price
+    1.5
+  end
+  
+  def current_ink_price
+    2
+  end
+  
 end

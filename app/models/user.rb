@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   end
   
   def role_and_dept_must_exist
-    if Role.find_by_id(role_id).nil?
+    if Role.find_by_id(role_id).nil? and !role_id.nil?
       self.errors.add(:description, "Must include a valid role.")
     end
     if Department.find_by_id(department_id).nil?

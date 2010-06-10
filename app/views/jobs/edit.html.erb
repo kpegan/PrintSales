@@ -7,7 +7,6 @@
 
 <% content_for(:page_info) do %>
 	<p>Staff: <%=h @job.staff.first_name %></p>
-	<p><%=h @job.status %></p>
 <% end %>
 
 <%= render :partial => "form", :locals => {:buttons => true } %>

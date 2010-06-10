@@ -38,20 +38,36 @@ class Job < ActiveRecord::Base
     end
   end
   
-  def status
-    unless paid_at.nil?
-      status = "paid"
-    else
-      unless printed_at.nil?
-        status = "printed"
-      else
-        unless created_at.nil?
-          status = "requested"
+  def status new_status = nil
+    #check or update the current status
+    case new_status
+      when nil
+        unless paid_at.nil?
+          status = "paid"
         else
-          status = ""
+          unless printed_at.nil?
+            status = "printed"
+          else
+            unless created_at.nil?
+              status = "requested"
+            else
+              status = ""
+            end
+          end
         end
+      when :requested
+        write_attribute(:printed_at, nil)
+        write_attribute(:paid_at, nil)
+        "requested"
+      when :printed
+        write_attribute(:printed_at, Time.now) if printed_at.nil?
+        write_attribute(:paid_at, nil)
+        "printed"
+      when :paid
+        write_attribute(:printed_at, Time.now) if printed_at.nil?
+        write_attribute(:paid_at, Time.now)
+        "paid"
       end
-    end
   end
   
   def status_date

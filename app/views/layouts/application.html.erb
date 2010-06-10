@@ -2,16 +2,17 @@
 "http://www.w3.org/TR/html4/strict.dtd">
 
 <html>
-    <head>
-        <meta name="generator" content="HTML Tidy, see www.w3.org">
-        <meta http-equiv="Content-Type" content=
-        "text/html; charset=iso-8859-1">
+<head>
+<meta name="generator" content="HTML Tidy, see www.w3.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
-        <title><%=h site_title%> - <%=h @page_title%></title>
-        <%= stylesheet_link_tag 'styles' %>
-    </head>
+<title><%=h site_title%> - <%=h @page_title%></title>
 
-    <body>
+<%= stylesheet_link_tag 'styles' %>
+<%= javascript_include_tag 'jquery', 'application'%>
+</head>
+
+<body>
         <div id="wrapper">
             <div id="banner">
                 <div id="site_title">
@@ -70,6 +71,6 @@
                 <br class="clear">
             </div><!--end page div-->
         </div><!--end wrapper-->
-    </body>
+</body>
 </html>
 

@@ -1,0 +1,26 @@
+<%# JOB INDEX VIEW %>
+
+<% content_for(:page_nav) do %>
+	<% unless @user.nil? %><li><%= link_to "Add new print job", new_user_job_path %></li><% end %>
+	<li></li>
+<% end %>
+
+<% content_for(:page_stat) do %>
+	<h3 class="unpaid"><%=h @jobs_requested.count %></h3>
+	<p class="unpaid">Unprinted jobs</p>
+<% end %>
+
+<% if @jobs.any? %>
+
+<h3>Requested jobs</h3>
+<%= render :partial => "jobs_table", :locals => {:rows => @jobs_requested, :buttons => true, :checkbox => false }   %>
+
+<h3>Printed jobs</h3>
+<%= render :partial => "jobs_table", :locals => {:rows => @jobs_printed, :buttons => true, :checkbox => false }   %>
+
+<h3>Paid jobs</h3>
+<%= render :partial => "jobs_table", :locals => {:rows => @jobs_paid, :buttons => true, :checkbox => false }   %>
+
+<% else %>
+<p>No prints jobs found.</p>
+<% end %>

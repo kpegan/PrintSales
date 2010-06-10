@@ -4,11 +4,24 @@ class JobsController < ApplicationController
   # GET /jobs.xml
   def index
     if params[:user_id].nil?
-      @jobs = Job.find :all, :order => "paid_at, printed_at"
-      @total_unpaid = 0;
-      for job in @jobs
-        @total_unpaid += job.discounted_total if job.paid_at.nil?
+      case params[:status]
+        when "requested"
+          conditions = "printed_at is NULL"
+        when "printed"
+          conditions = "printed_at is not NULL and paid_at is NULL"
+        when "paid"
+          conditions = "paid_at is not NULL"
+        else 
+          conditions = ""
       end
+      
+      @jobs = Job.find :all, :conditions => conditions, :order => "paid_at, printed_at"
+      
+      @total = 0;
+      for job in @jobs
+        @total += job.discounted_total
+      end
+      
       @page_title = "Print jobs"
       @table_caption = ""
     else
@@ -41,6 +54,8 @@ class JobsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @job = @user.jobs.new
+    @job.paper_price = current_paper_price
+    @job.ink_price = current_ink_price
 
     @page_title = "New print job for " + @user.full_name 
 
@@ -62,6 +77,8 @@ class JobsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @job = @user.jobs.build(params[:job])
+    @job.paper_price = current_paper_price
+    @job.ink_price = current_ink_price
 
     respond_to do |format|
       if @job.save
@@ -79,6 +96,16 @@ class JobsController < ApplicationController
   # PUT /jobs/1.xml
   def update
     @job = Job.find(params[:id])
+    case params[:status]
+      when "requested"
+        @job.status :requested
+      when "printed"
+        @job.status :printed
+      when "paid"
+        @job.status :paid
+    end
+    
+    @job.save
 
     respond_to do |format|
       if @job.update_attributes(params[:job])
@@ -107,43 +134,38 @@ class JobsController < ApplicationController
   def pay
     #Pay selected jobs
     @page_title = "Receipt"
-    
     if params[:job_ids].any?
       @user = User.find params[:user_id]
       @jobs = Job.find params[:job_ids] 
       
       @total = 0
       for job in @jobs
-        if job.printed_at.nil? 
-          job.update_attributes(:printed_at => Time.now())
-        end
-        if job.update_attributes(:paid_at => Time.now())
-          @total += job.discounted_total
-        end
+        job.status params[:submit] == "Print selected" ? :printed : :paid
+        job.save
+        @total += job.discounted_total
       end
-      total_string = "%5.2f" % @total
     else
       flash[:error] = "You didn't select any print jobs."
-    end  
-  
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @jobs }
+    end
+    if params[:submit] == "Pay selected"
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @jobs }
+      end
+    else
+      redirect_to @user
     end
   end
 
   def print
     @job = Job.find(params[:id])
+    
+    @job.status :printed
+    @job.save
+    
     respond_to do |format|
-      if @job.update_attributes(:printed_at => Time.now() )
-        flash[:notice] = 'Job is now set to printed.'
-        format.html { redirect_to(@job) }
-        format.xml  { head :ok }
-      else
-        flash[:error] = 'An error occured. Job could not be set to printed.'
-        format.html { redirect_to(@job) }
-        format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }       
-      end
+      format.html { redirect_to(@job) }
+      format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }
     end
   end
   
@@ -175,7 +197,8 @@ class JobsController < ApplicationController
         format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }       
       end
     end
-   
   end 
+  
+  
   
 end

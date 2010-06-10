@@ -1,9 +1,0 @@
-<%# USER NEW VIEW %>
-
-<% content_for :page_class, "centered" %>
-
-<% content_for(:page_nav) do %>
-	<li><%= link_to "Back to user", @user %></li>
-<% end %>
-
-<%= render :partial => "form", :locals => {:buttons => true } %>
