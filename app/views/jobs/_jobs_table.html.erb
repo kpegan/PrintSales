@@ -17,9 +17,7 @@
 		<th class="number">Disc.</th>
 		<th class="number">Final</th>
 	</tr>
-<h1><%= rows.count %>	</h1>
-<% for row in rows %>
-    <% unless row.user.nil? %>	
+<% for row in rows %>	
 	<tr class="<%= cycle("odd", "even") %> <%=h row.status %>">
 <% if buttons %>
 		<% if checkbox %><td class="button"><%= check_box_tag("job_ids[]", row.id)%></td><% end %>
@@ -47,5 +45,4 @@
 		<td class="number"><%=h number_to_percentage row.discount, :precision => 2 %></td>
 		<td class="number"><%=h number_to_currency row.discounted_total %></td>
 	</tr>
-	<% end %>
 <% end %>
