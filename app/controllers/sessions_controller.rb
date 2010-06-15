@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     logout_keeping_session!
     user = User.authenticate(params[:login], params[:password])
-    if user and user.role.name == "Admin" or user.role.name == "Staff" 
+    if user and user.is_an_admin_or_staff? 
       # Protects against session fixation attacks, causes request forgery
       # protection if user resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
       note_failed_signin
       @login       = params[:login]
       @remember_me = params[:remember_me]
+      
       render :action => 'new'
     end
   end

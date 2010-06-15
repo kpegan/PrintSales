@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @centered = "centered"
     @page_title = "Editing " + @user.full_name
   end
  
@@ -51,7 +50,7 @@ class UsersController < ApplicationController
     
     @user.role_id = Role.find_by_name("Customer").id unless current_user.is_an_admin?
     
-    @user.graduation = nil unless @user.position = "student"
+    @user.graduation = nil unless @user.position =~ /student/i
     
     @page_title = "Create new user account"
       

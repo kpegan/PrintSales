@@ -10,13 +10,13 @@
 	<p>Total for listed jobs</p>
 <% end %>
 
-<% if @jobs.any? %>
-<ul class="list_buttons">
+<ul class="list_buttons horizontal_nav">
 	<li><%= link_to "Requested", :status=>"requested" %></li>
 	<li><%= link_to "Printed", :status=>"printed" %></li>
 	<li><%= link_to "Paid", :status=>"paid" %></li>
 	<li><%= link_to "All", jobs_path %></li>
 </ul>
+<% if @jobs.any? %>
 <table id="main_table" cellspacing="0">
 <%= render :partial => "jobs_table", :locals => {:rows => @jobs, :buttons => true, :checkbox => false }   %>
 </table>

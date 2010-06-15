@@ -123,8 +123,11 @@ class JobsController < ApplicationController
   # DELETE /jobs/1.xml
   def destroy
     @job = Job.find(params[:id])
-    @job.destroy
-
+    if current_user.is_an_admin? or @job.status != paid
+      @job.destroy
+    else
+      flash[:error] = "Paid jobs can only be modified by an administrator."
+    end
     respond_to do |format|
       format.html { redirect_to(jobs_url) }
       format.xml  { head :ok }

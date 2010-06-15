@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_ink_price
-    2
+    2.5
   end
   
 end
