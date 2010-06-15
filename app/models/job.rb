@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
   belongs_to :user, :class_name => "User", :foreign_key => "user_id"
   belongs_to :staff, :class_name => "User", :foreign_key => "staff_id"
   
-  validates_presence_of     :file
+  validates_presence_of  :file
   
   def paper_area 
     (paper_width * paper_height) / 144
@@ -32,7 +32,7 @@ class Job < ActiveRecord::Base
   
   def discounted_total
     unless discount.nil?
-      total * (1 - discount)
+      total - (total * discount / 100)
     else
       total
     end
