@@ -19,7 +19,7 @@ class JobsController < ApplicationController
       
       @total = 0;
       for job in @jobs
-        @total += job.total
+        @total += 10
       end
       
       @page_title = "Print jobs"
