@@ -57,7 +57,7 @@
 	<% end %>
 	<tr>
 		<th colspan="4">Final</th>
-		<td><strong id="total"><%=h number_to_currency @job.discounted_total %></strong></td>
+		<td><strong><%=h number_to_currency @job.discounted_total %></strong></td>
 	</tr>
 </table>
 <%= f.submit 'Submit' %>

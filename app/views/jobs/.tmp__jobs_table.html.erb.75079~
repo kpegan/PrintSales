@@ -1,0 +1,49 @@
+	<tr>
+<% if buttons %>
+		<% if checkbox %><th width="20px"></th><% end %>
+		<th width="20px"></th>
+		<th width="20px"></th>
+		<th width="20px"></th>
+<% end %>
+		<% if @user.nil? %><th>User</th><% end %>
+		<th>Staff</th>
+		<th>File</th>
+		<th>Status</th>
+		<th>Paper size</th>
+		<th>Image size</th>
+		<th class="number">Print cost</th>
+		<th class="number">Qnty.</th>
+		<th class="number">Total</th>
+		<th class="number">Disc.</th>
+		<th class="number">Final</th>
+	</tr>
+	
+<% for row in rows %>	
+	<tr class="<%= cycle("odd", "even") %> <%=h row.status %>">
+<% if buttons %>
+		<% if checkbox %><td class="button"><%= check_box_tag("job_ids[]", row.id)%></td><% end %>
+		<td class="button"><%= link_to image_tag("show.png", :border=>0), row %></td>
+		<td class="button">
+			<% if row.status == "requested" %>
+				<%= link_to image_tag("edit.png", :border=>0), edit_job_path(row) %>
+			<% end %>
+		</td>
+		<td class="button">
+			<% if row.status == "requested" %>
+				<%= link_to image_tag("delete.png", :border=>0), row, :confirm => 'Are you sure you want to delete this record?', :method => :delete %>
+			<% end %>
+		</td>
+<% end %>
+		<% if @user.nil? %><td><%= link_to row.user.full_name, row.user %></td><% end %>
+		<td><%=h row.staff.first_name %></td>
+		<td><%=h row.file %></td>
+		<td><%=h row.status_date %></td>
+		<td><%=h row.paper_width %>" x <%=h row.paper_height %>"</td>
+		<td><%=h row.image_width %>" x <%=h row.image_height %>"</td>
+		<td class="number"><%=h number_to_currency row.print_cost%></td>
+		<td class="number"><%=h row.quantity %></td>
+		<td class="number"><%=h number_to_currency row.total %></td>
+		<td class="number"><%=h number_to_percentage row.discount, :precision => 2 %></td>
+		<td class="number"><%=h number_to_currency row.discounted_total %></td>
+	</tr>
+<% end %>

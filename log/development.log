@@ -58413,3 +58413,178 @@ Rendering jobs/index
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
 Rendered jobs/_jobs_table (149.2ms)
 Completed in 266ms (View: 227, DB: 6) | 200 OK [http://0.0.0.0/jobs]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-17 09:18:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 115ms (View: 112, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-06-17 09:18:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.8ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mJob Load (3.3ms)[0m   [0mSELECT * FROM "jobs" ORDER BY paid_at, printed_at[0m
+Rendering template within layouts/application
+Rendering jobs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered jobs/_jobs_table (263.1ms)
+Completed in 374ms (View: 276, DB: 6) | 200 OK [http://0.0.0.0/jobs]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-17 09:18:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 1 AND (paid_at IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mJob Load (1.1ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid_at IS NULL)) [0m
+  [4;35;1mDepartment Load (0.2ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.9ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 3 AND (paid_at IS NULL)) [0m
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.5ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 4 AND (paid_at IS NULL)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 2) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 9 AND (paid_at IS NULL)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 10 AND (paid_at IS NULL)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;36;1mJob Load (0.2ms)[0m   [0;1mSELECT * FROM "jobs" WHERE ("jobs".user_id = 11 AND (paid_at IS NULL)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+  [4;35;1mJob Load (0.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 12 AND (paid_at IS NULL)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 3) [0m
+Completed in 96ms (View: 73, DB: 7) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-17 09:18:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mJob Load (1.2ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs".user_id = 2 AND (paid_at IS NULL)) ORDER BY paid_at, printed_at, created_at[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mDepartment Load (0.2ms)[0m   [0;1mSELECT * FROM "departments" WHERE ("departments"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered jobs/_jobs_table (40.0ms)
+Completed in 138ms (View: 109, DB: 3) | 200 OK [http://0.0.0.0/users/2]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-06-17 09:18:28) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"jobs"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_form (9.3ms)
+Completed in 115ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/2/jobs/new]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-06-17 09:18:34) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_form (7.1ms)
+Completed in 49ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/users/2/jobs/new]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-06-17 09:19:37) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"2", "controller"=>"jobs"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_form (6.6ms)
+Completed in 104ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/users/2/jobs/new]
+
+
+Processing JobsController#create (for 127.0.0.1 at 2010-06-17 09:21:04) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"sVqVs065zsgDFVFHxwvrikSNykIictP80Tnfom2K6+g=", "user_id"=>"2", "job"=>{"image_height"=>"19", "quantity"=>"1", "staff_id"=>"1", "image_width"=>"15", "paper_height"=>"20", "paper_width"=>"16", "file"=>"Filename"}, "controller"=>"jobs"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mJob Create (19.6ms)[0m   [0;1mINSERT INTO "jobs" ("image_height", "paper_price", "discount", "created_at", "staff_id", "quantity", "updated_at", "ink_price", "user_id", "paper_height", "image_width", "file", "paper_width", "printed_at", "paid_at") VALUES(19.0, 1.5, NULL, '2010-06-17 13:21:04', '1', 1, '2010-06-17 13:21:04', 2.5, 2, 20.0, 15.0, 'Filename', 16.0, NULL, NULL)[0m
+Redirected to http://0.0.0.0:3001/jobs/27
+Completed in 54ms (DB: 21) | 302 Found [http://0.0.0.0/users/2/jobs]
+
+
+Processing JobsController#show (for 127.0.0.1 at 2010-06-17 09:21:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"27", "controller"=>"jobs"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;35;1mJob Load (0.4ms)[0m   [0mSELECT * FROM "jobs" WHERE ("jobs"."id" = 27) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering jobs/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 122ms (View: 98, DB: 2) | 200 OK [http://0.0.0.0/jobs/27]

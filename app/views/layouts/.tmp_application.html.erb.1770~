@@ -9,7 +9,7 @@
 <title><%=h site_title%> - <%=h @page_title%></title>
 
 <%= stylesheet_link_tag 'styles' %>
-<%= javascript_include_tag 'jquery', 'application', 'printsales'%>
+<%= javascript_include_tag 'jquery', 'application'%>
 </head>
 
 <body>

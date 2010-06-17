@@ -1,0 +1,25 @@
+<%# JOB INDEX VIEW %>
+
+<% content_for(:page_nav) do %>
+	<% unless @user.nil? %><li><%= link_to "Add new print job", new_user_job_path %></li><% end %>
+	<li></li>
+<% end %>
+
+<% content_for(:page_stat) do %>
+	<h3><%=h number_to_currency @total %></h3>
+	<p>Total for listed jobs</p>
+<% end %>
+
+<ul class="list_buttons horizontal_nav">
+	<li><%= link_to "Requested", :status=>"requested" %></li>
+	<li><%= link_to "Printed", :status=>"printed" %></li>
+	<li><%= link_to "Paid", :status=>"paid" %></li>
+	<li><%= link_to "All", jobs_path %></li>
+</ul>
+<% if @jobs.any? %>
+<table id="main_table" cellspacing="0">
+<%= render :partial => "jobs_table", :locals => {:rows => @jobs, :buttons => true, :checkbox => false }   %>
+</table>
+<% else %>
+<p>No prints jobs found.</p>
+<% end %>
