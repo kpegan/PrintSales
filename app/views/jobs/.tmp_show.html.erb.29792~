@@ -1,0 +1,61 @@
+<%# JOBS SHOW VIEW %>
+<% content_for :page_class, "center_box" %>
+
+<% content_for(:page_nav) do %>
+	<li><%= link_to 'Edit', edit_job_path(@job) %></li>
+	<li><%= link_to "Back to user", @job.user %>
+<% end %>
+
+<% content_for(:page_info) do %>
+	<p>Staff: <%=h @job.staff.first_name %></p>
+	<p><%=h @job.status_date %></p>
+<% end %>
+
+<p>File: <strong><%= @job.file %></strong></p>
+
+<table id="print_job" cellspacing="0">
+	<tr>
+		<th></th>
+		<th>Dimensions</th>
+		<th>Area</th>
+		<th>Per sq. ft.</th>
+		<th>Price</th>
+	</tr>
+	<tr>
+		<th>Paper</th>
+		<td><%=h paper_dimensions @job %></td>
+		<td><%=h "%.2f" % @job.paper_area %> sq. ft.</td>
+		<td><%=h number_to_currency @job.paper_price %></td>
+		<td><%=h number_to_currency @job.paper_cost %></td>
+	</tr>	
+	<tr>
+		<th>Image</th>
+		<td><%=h image_dimensions @job %></td>
+		<td><%=h "%.2f" % @job.image_area %> sq. ft.</td>
+		<td><%=h number_to_currency @job.ink_price %></td>
+		<td><%=h number_to_currency @job.ink_cost %></td>
+	</tr>
+	<tr class="border"></tr>
+	<tr>	
+		<th colspan="4">Print price</th>
+		<td><%=h number_to_currency @job.print_cost %></td>
+	</tr>
+	<tr>
+		<th colspan="4">Qnty.</th>
+		<td><%=h @job.quantity %></td>
+	</tr>
+	<% unless @job.discount.nil? or @job.discount == 0 %>
+	<tr>
+		<th colspan="4">Subtotal</th>
+		<td><%=h number_to_currency @job.total %></td>
+	</tr>
+	<tr>
+		<th colspan="4">Discount</th>
+		<td><%=h number_to_percentage @job.discount, :precision => 0 %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<th colspan="4">Final</th>
+		<td><strong><%=h number_to_currency @job.discounted_total %></strong></td>
+	</tr>
+</table>

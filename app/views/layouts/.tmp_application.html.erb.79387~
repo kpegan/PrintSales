@@ -8,8 +8,7 @@
 
 <title><%=h site_title%> - <%=h @page_title%></title>
 
-<%= stylesheet_link_tag 'styles', :media => "screen" %>
-<%= stylesheet_link_tag 'print', :media => "print" %>
+<%= stylesheet_link_tag 'styles' %>
 <%= javascript_include_tag 'jquery', 'application', 'printsales'%>
 </head>
 
@@ -17,8 +16,7 @@
         <div id="wrapper">
             <div id="banner">
                 <div id="site_title">
-                    <img id="logo_print" src="/images/MICA_Logo_Black.png"/>
-					<img id="logo_screen" src="/images/MICA_Logo_White.png"/>
+                    <img alt="" id="logo" src="/images/MICA_Logo_White.png"> 
                     <h2><%=h site_title%></h2>
                 </div>
 

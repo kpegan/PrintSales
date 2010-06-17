@@ -19,6 +19,13 @@ h1, h2, h3, h4, h5, p {
 	margin-top: 0.2em;
 	margin-bottom: 0.5em;
 }
+#site_title #logo_screen{
+	margin-top: 2px;
+	float: left;
+}
+#site_title #logo_print{
+	display: none;	
+}
 #site_title h2 {
 	font-weight: normal;
 	font-size: 1.1em;
@@ -62,9 +69,6 @@ body {
 }
 #page_header {
 	padding-top: 0.7em;
-}
-#banner #logo {
-	float: left;
 }
 #banner, #site_title, #site_nav, #login_status {
 	height: 35px;

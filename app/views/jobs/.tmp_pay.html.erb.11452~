@@ -1,6 +1,5 @@
 <%# JOB PAY VIEW%>
 <% content_for(:page_nav) do %>
-	<li><%= link_to "Back to user", @user %>
 <% end %>
 
 <% content_for(:page_stat) do %>
