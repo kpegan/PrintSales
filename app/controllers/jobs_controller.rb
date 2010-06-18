@@ -56,6 +56,7 @@ class JobsController < ApplicationController
     @job = @user.jobs.new
     @job.paper_price = current_paper_price
     @job.ink_price = current_ink_price
+    @job.quantity = 1
 
     @page_title = "New print job for " + @user.full_name 
 
@@ -123,7 +124,7 @@ class JobsController < ApplicationController
   # DELETE /jobs/1.xml
   def destroy
     @job = Job.find(params[:id])
-    if current_user.is_an_admin? or @job.status != paid
+    if current_user.is_an_admin? or @job.status != "paid"
       @job.destroy
     else
       flash[:error] = "Paid jobs can only be modified by an administrator."
