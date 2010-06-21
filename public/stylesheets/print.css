@@ -19,6 +19,11 @@ h1, h2, h3, h4, h5, p {
 	margin-bottom: 0.1em;
 	margin-top: 0.2em;
 }
+a {
+	font-weight: normal;
+	color: #000;
+	text-decoration: none;
+}
 #site_title logo_screen{
 	display: none;	
 }
@@ -40,16 +45,17 @@ h1#page_title {
 	margin: 0;
 	padding: 0;
 }
-
-a {
+.horizontal_nav {
 	display: none;
 }
-
 .vertical_nav li {
 	display: block;
 	text-align: center;
 	padding: 2px;
 	margin-bottom: 2px;
+}
+.button {
+	display: none;
 }
 
 
