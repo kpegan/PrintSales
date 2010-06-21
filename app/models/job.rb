@@ -4,8 +4,12 @@ class Job < ActiveRecord::Base
   
   validates_presence_of  :file
   
-  def paper_area 
-    (paper_width * paper_height) / 144
+  def paper_area
+    if paper_width.nil? or paper_height.nil?
+      0
+    else
+      (paper_width * paper_height) / 144
+    end
   end
   
   def paper_cost
@@ -17,7 +21,11 @@ class Job < ActiveRecord::Base
   end
   
   def image_area
-    (image_width * image_height) / 144
+    if image_width.nil? or image_height.nil?
+      0
+    else
+      (image_width * image_height) / 144
+    end
   end
   
   def print_cost
